@@ -24,7 +24,7 @@ jobs:
           npm ci
           npm run build
 
-      - name: Deploy via SSH
+      - name: Clear old files on Hostinger
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -32,34 +32,16 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            set -e
-
-            mkdir -p ~/.ssh
-
-            echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > ~/.ssh/getsleepcalculator_deploy
-            chmod 600 ~/.ssh/getsleepcalculator_deploy
-
-            cat >> ~/.ssh/config << 'EOF'
-            Host github-getsleepcalculator
-              HostName github.com
-              User git
-              IdentityFile ~/.ssh/getsleepcalculator_deploy
-            EOF
-
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-            if [ ! -d ~/getsleepcalculator/.git ]; then
-              git clone git@github-getsleepcalculator:saadhunarflow/getsleepcalculator.git ~/getsleepcalculator
-            fi
-
-            cd ~/getsleepcalculator
-            git fetch origin main
-            git reset --hard origin/main
-
-            npm ci
-            npm run build
-
             rm -rf /home/u131596745/domains/getsleepcalculator.net/public_html/*
-            cp -r ~/getsleepcalculator/out/. /home/u131596745/domains/getsleepcalculator.net/public_html/
 
-            echo "Deploy complete!"
+      - name: Upload build via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "out/*"
+          target: "/home/u131596745/domains/getsleepcalculator.net/public_html/"
+          strip_components: 1
+          rm: false
