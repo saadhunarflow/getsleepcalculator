@@ -2,7 +2,8 @@ name: Deploy Sleep Calculator to Hostinger
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -18,15 +19,12 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies & Build
+        run: |
+          npm ci
+          npm run build
 
-      - name: Build static export
-        run: npm run build
-        env:
-          NODE_ENV: production
-
-      - name: Clear old files on Hostinger
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -34,16 +32,27 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            rm -rf /home/u131596745/domains/getsleepcalculator.net/public_html/*
+            set -e
 
-      - name: Upload new build via SCP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: "out/*"
-          target: "/home/u131596745/domains/getsleepcalculator.net/public_html"
-          strip_components: 1
-          rm: false
+            mkdir -p ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+            # Repo clone karo agar pehli baar hai
+            if [ ! -d ~/getsleepcalculator/.git ]; then
+              git clone git@github.com:saadhunarflow/getsleepcalculator.git ~/getsleepcalculator
+            fi
+
+            echo "Fetching latest code..."
+            cd ~/getsleepcalculator
+            git fetch origin main
+            git reset --hard origin/main
+
+            echo "Installing dependencies & building..."
+            npm ci
+            npm run build
+
+            echo "Copying build to public_html..."
+            rm -rf /home/u131596745/domains/getsleepcalculator.net/public_html/*
+            cp -r ~/getsleepcalculator/out/. /home/u131596745/domains/getsleepcalculator.net/public_html/
+
+            echo "Deploy complete!"
