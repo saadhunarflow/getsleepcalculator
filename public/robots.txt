@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://getsleepcalculator.net
+
+# Sitemaps
+Sitemap: https://getsleepcalculator.net/sitemap.xml
