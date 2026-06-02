@@ -35,23 +35,30 @@ jobs:
             set -e
 
             mkdir -p ~/.ssh
+
+            echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > ~/.ssh/getsleepcalculator_deploy
+            chmod 600 ~/.ssh/getsleepcalculator_deploy
+
+            cat >> ~/.ssh/config << 'EOF'
+            Host github-getsleepcalculator
+              HostName github.com
+              User git
+              IdentityFile ~/.ssh/getsleepcalculator_deploy
+            EOF
+
             ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-            # Repo clone karo agar pehli baar hai
             if [ ! -d ~/getsleepcalculator/.git ]; then
-              git clone git@github.com:saadhunarflow/getsleepcalculator.git ~/getsleepcalculator
+              git clone git@github-getsleepcalculator:saadhunarflow/getsleepcalculator.git ~/getsleepcalculator
             fi
 
-            echo "Fetching latest code..."
             cd ~/getsleepcalculator
             git fetch origin main
             git reset --hard origin/main
 
-            echo "Installing dependencies & building..."
             npm ci
             npm run build
 
-            echo "Copying build to public_html..."
             rm -rf /home/u131596745/domains/getsleepcalculator.net/public_html/*
             cp -r ~/getsleepcalculator/out/. /home/u131596745/domains/getsleepcalculator.net/public_html/
 
