@@ -127,6 +127,24 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Google Analytics 4 */}
+        <Script
+          id="ga4-gtag-js"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-YHPRM5XESF"
+        />
+        <Script
+          id="ga4-gtag-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YHPRM5XESF');
+            `,
+          }}
+        />
       </body>
     </html>
   );
