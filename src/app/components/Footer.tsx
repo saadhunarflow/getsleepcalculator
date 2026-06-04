@@ -1,10 +1,20 @@
 import Link from "next/link";
 
 const toolLinks = [
-  { label: "Sleep Calculator", href: "/" },
-  { label: "Bedtime Calculator", href: "/bedtime-calculator/" },
-  { label: "Wake-Up Calculator", href: "/wake-up-time-calculator/" },
-  { label: "Nap Calculator", href: "/nap-calculator/" },
+  { label: "Sleep Calculator",          href: "/" },
+  { label: "Bedtime Calculator",        href: "/bedtime-calculator/" },
+  { label: "Wake-Up Calculator",         href: "/wake-up-time-calculator/" },
+  { label: "Sleep Cycle Calculator",     href: "/sleep-cycle-calculator/" },
+  { label: "Nap Calculator",             href: "/nap-calculator/" },
+  { label: "How Much Sleep Did I Get?",  href: "/how-much-sleep-did-i-get/" },
+  { label: "Sleep Debt Calculator",      href: "/sleep-debt-calculator/" },
+  { label: "REM Sleep Calculator",       href: "/rem-sleep-calculator/" },
+  { label: "Jet Lag Calculator",         href: "/jet-lag-calculator/" },
+  { label: "Chronotype Calculator",      href: "/chronotype-calculator/" },
+  { label: "Sleep Schedule Builder",     href: "/sleep-schedule-builder/" },
+  { label: "Sleep Calculator by Age",    href: "/sleep-calculator-by-age/" },
+  { label: "Baby Sleep Calculator",      href: "/baby-sleep-calculator/" },
+  { label: "Sleep Calculator for Kids",  href: "/sleep-calculator-for-kids/" },
 ];
 
 const learnLinks = [

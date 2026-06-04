@@ -78,15 +78,19 @@ const schemaFAQ = {
 };
 
 const tools = [
-  { href: "/bedtime-calculator/", icon: "🛏️", title: "Bedtime Calculator", desc: "What time should I go to bed?" },
-  { href: "/wake-up-time-calculator/", icon: "⏰", title: "Wake-Up Calculator", desc: "What time should I wake up?" },
-  { href: "/nap-calculator/", icon: "😴", title: "Nap Calculator", desc: "Perfect power nap timing" },
-  { href: "/sleep-debt-calculator/", icon: "📊", title: "Sleep Debt Calculator", desc: "Track your weekly sleep debt" },
-  { href: "/jet-lag-calculator/", icon: "✈️", title: "Jet Lag Calculator", desc: "Adjust your schedule after travel" },
-  { href: "/rem-sleep-calculator/", icon: "🧠", title: "REM Sleep Calculator", desc: "Optimize your REM sleep" },
-  { href: "/sleep-cycle-calculator/", icon: "🔄", title: "Sleep Cycle Calculator", desc: "Visualize your sleep cycles" },
-  { href: "/chronotype-calculator/", icon: "🦁", title: "Chronotype Calculator", desc: "Are you a Lion, Bear, or Wolf?" },
-  { href: "/sleep-schedule-builder/", icon: "📅", title: "Sleep Schedule Builder", desc: "Build your weekly sleep plan" },
+  { href: "/bedtime-calculator/",        icon: "🛏️", title: "Bedtime Calculator",        desc: "What time should I go to bed?" },
+  { href: "/wake-up-time-calculator/",    icon: "⏰", title: "Wake-Up Calculator",         desc: "What time should I wake up?" },
+  { href: "/nap-calculator/",             icon: "😴", title: "Nap Calculator",             desc: "Perfect power nap timing" },
+  { href: "/sleep-debt-calculator/",      icon: "💳", title: "Sleep Debt Calculator",      desc: "Track your weekly sleep debt" },
+  { href: "/jet-lag-calculator/",         icon: "✈️", title: "Jet Lag Calculator",         desc: "Adjust your schedule after travel" },
+  { href: "/rem-sleep-calculator/",       icon: "🧠", title: "REM Sleep Calculator",       desc: "Optimize your REM sleep" },
+  { href: "/sleep-cycle-calculator/",     icon: "🔄", title: "Sleep Cycle Calculator",     desc: "Visualize your sleep cycles" },
+  { href: "/chronotype-calculator/",      icon: "🦉", title: "Chronotype Calculator",      desc: "Are you a Lion, Bear, or Wolf?" },
+  { href: "/sleep-schedule-builder/",     icon: "📅", title: "Sleep Schedule Builder",     desc: "Build your weekly sleep plan" },
+  { href: "/how-much-sleep-did-i-get/",   icon: "📊", title: "How Much Sleep Did I Get?",  desc: "Calculate your exact sleep duration" },
+  { href: "/sleep-calculator-by-age/",    icon: "👤", title: "Sleep Calculator by Age",   desc: "Sleep needs by age group" },
+  { href: "/baby-sleep-calculator/",      icon: "👶", title: "Baby Sleep Calculator",     desc: "Sleep guide for babies 0–3 years" },
+  { href: "/sleep-calculator-for-kids/",  icon: "🧒", title: "Sleep Calculator for Kids", desc: "Ideal bedtime for school-age kids" },
 ];
 
 const facts = [
@@ -287,6 +291,7 @@ export default function HomePage() {
 
       {/* All Tools */}
       <section
+        id="all-tools"
         style={{
           background: "var(--bg-card)",
           borderTop: "1px solid var(--border)",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbSchema } from "@/lib/seo";
+import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Sleep Stages Explained – NREM, REM & Sleep Cycles",
@@ -138,6 +139,13 @@ const faqs = [
   { q: "What happens if you don't get enough REM sleep?", a: "REM sleep deprivation impairs memory consolidation, emotional regulation, and creative problem-solving. Studies show REM-deprived people are more emotionally reactive, have poorer learning retention, and show increased risk of mood disorders over time." },
 ];
 
+const tocItems: TocItem[] = [
+  { id: "sleep-cycle", text: "The 90-Minute Sleep Cycle", level: 2 },
+  { id: "stages-detail", text: "The 4 Stages of Sleep in Detail", level: 2 },
+  { id: "cycles-through-night", text: "How Sleep Cycles Change Through the Night", level: 2 },
+  { id: "faq", text: "Frequently Asked Questions", level: 2 },
+];
+
 export default function SleepStagesPage() {
   return (
     <>
@@ -168,12 +176,18 @@ export default function SleepStagesPage() {
             <strong style={{ color: "var(--text-primary)" }}>4 distinct sleep stages</strong> — each with a
             unique biological purpose. Understanding them is the key to <Link href="/blog/why-you-wake-up-tired/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>waking up truly refreshed</Link>.
           </p>
+          <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>Last updated: June 2026</p>
         </div>
+      </section>
+
+      {/* Table of Contents */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-0">
+        <TableOfContents items={tocItems} />
       </section>
 
       {/* Cycle overview */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
+        <h2 id="sleep-cycle" className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
           The 90-Minute Sleep Cycle
         </h2>
         <div className="rounded-3xl p-6 sm:p-8 mb-8" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
@@ -224,7 +238,7 @@ export default function SleepStagesPage() {
 
       {/* Stages detail */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-14 space-y-6">
-        <h2 className="text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>
+        <h2 id="stages-detail" className="text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>
           The 4 Stages of Sleep in Detail
         </h2>
         {stages.map((stage) => (
@@ -283,7 +297,7 @@ export default function SleepStagesPage() {
       {/* How cycles change through the night */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
+          <h2 id="cycles-through-night" className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
             How Sleep Cycles Change Through the Night
           </h2>
           <div className="space-y-4">
@@ -322,7 +336,7 @@ export default function SleepStagesPage() {
 
       {/* FAQ */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
-        <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>
+        <h2 id="faq" className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">

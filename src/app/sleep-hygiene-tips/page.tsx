@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbSchema } from "@/lib/seo";
+import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Sleep Hygiene Tips – 20 Science-Backed Ways to Sleep Better",
@@ -231,6 +232,17 @@ const faqs = [
   { q: "How long does it take to improve sleep hygiene?", a: "Most people notice significant improvement within 2–4 weeks of consistently applying good sleep hygiene practices. The circadian rhythm adapts within 1–2 weeks of a fixed wake time. Full optimization may take 4–8 weeks, especially if recovering from chronic sleep deprivation." },
 ];
 
+const tocItems: TocItem[] = [
+  { id: "sleep-schedule", text: "Sleep Schedule", level: 2 },
+  { id: "bedroom-environment", text: "Bedroom Environment", level: 2 },
+  { id: "light-circadian-rhythm", text: "Light & Circadian Rhythm", level: 2 },
+  { id: "diet-substances", text: "Diet & Substances", level: 2 },
+  { id: "physical-activity", text: "Physical Activity", level: 2 },
+  { id: "wind-down-routine", text: "Wind-Down Routine", level: 2 },
+  { id: "mental-habits", text: "Mental Habits", level: 2 },
+  { id: "faq", text: "Frequently Asked Questions", level: 2 },
+];
+
 export default function SleepHygieneTipsPage() {
   return (
     <>
@@ -271,7 +283,13 @@ export default function SleepHygieneTipsPage() {
               </span>
             ))}
           </div>
+          <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>Last updated: June 2026</p>
         </div>
+      </section>
+
+      {/* Table of Contents */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-0">
+        <TableOfContents items={tocItems} />
       </section>
 
       {/* Quick impact summary */}
@@ -297,7 +315,7 @@ export default function SleepHygieneTipsPage() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-14 space-y-12">
         {categories.map((cat) => (
           <div key={cat.title}>
-            <h2 className="text-xl font-bold mb-5 flex items-center gap-3" style={{ color: "var(--text-primary)" }}>
+            <h2 id={cat.title.toLowerCase().replace(/\s*&\s*/g, '-').replace(/\s+/g, '-')} className="text-xl font-bold mb-5 flex items-center gap-3" style={{ color: "var(--text-primary)" }}>
               <span className="text-2xl">{cat.icon}</span>
               <span style={{ borderBottom: `2px solid ${cat.color}`, paddingBottom: "2px" }}>{cat.title}</span>
             </h2>
@@ -329,7 +347,7 @@ export default function SleepHygieneTipsPage() {
       {/* FAQ */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>
+          <h2 id="faq" className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
@@ -345,6 +363,28 @@ export default function SleepHygieneTipsPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Related Tools */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-6">
+        <h2 className="text-xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>Related Tools</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            { href: "/bedtime-calculator/", icon: "🌙", t: "Bedtime Calculator", d: "Find your ideal bedtime based on sleep cycles" },
+            { href: "/sleep-schedule-builder/", icon: "📅", t: "Sleep Schedule Builder", d: "Build a consistent weekly sleep routine" },
+            { href: "/sleep-debt-calculator/", icon: "💤", t: "Sleep Debt Calculator", d: "Find out how much sleep you owe your body" },
+          ].map((item) => (
+            <Link key={item.href} href={item.href}
+              className="rounded-2xl p-5 flex gap-3 hover:scale-[1.02] transition-all"
+              style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+              <span className="text-2xl">{item.icon}</span>
+              <div>
+                <p className="font-semibold text-sm" style={{ color: "var(--text-primary)" }}>{item.t}</p>
+                <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>{item.d}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

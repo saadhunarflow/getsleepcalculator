@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Contact – Get Sleep Calculator",
   description: "Contact GetSleepCalculator.net for questions, feedback, corrections, or partnership inquiries.",
   alternates: { canonical: "https://getsleepcalculator.net/contact/" },
+  robots: { index: false, follow: true },
 };
 
 export default function ContactPage() {

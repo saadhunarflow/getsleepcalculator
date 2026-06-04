@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbSchema } from "@/lib/seo";
 import HowMuchSleepContent from "@/app/components/HowMuchSleepContent";
+import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "How Much Sleep Do I Need? (By Age, 2026 Guidelines)",
@@ -48,6 +49,13 @@ const deprivationSigns = [
   { icon: "⚡", title: "Microsleeps", desc: "Involuntary 1–30 second 'blackouts' while awake. Dangerous while driving. A strong signal you need more sleep." },
 ];
 
+const tocItems: TocItem[] = [
+  { id: "by-age", text: "Recommended Sleep Hours by Age", level: 2 },
+  { id: "adults", text: "How Much Sleep Do Adults Need?", level: 2 },
+  { id: "deprivation-signs", text: "Signs You\u2019re Not Getting Enough Sleep", level: 2 },
+  { id: "factors", text: "Factors That Affect How Much Sleep You Need", level: 2 },
+];
+
 export default function HowMuchSleepPage() {
   return (
     <>
@@ -92,12 +100,18 @@ export default function HowMuchSleepPage() {
               </span>
             ))}
           </div>
+          <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>Last updated: June 2026</p>
         </div>
+      </section>
+
+      {/* Table of Contents */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-0">
+        <TableOfContents items={tocItems} />
       </section>
 
       {/* Age Table */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-        <h2 className="text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>
+        <h2 id="by-age" className="text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>
           Recommended Sleep Hours by Age
         </h2>
         <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
@@ -136,7 +150,7 @@ export default function HowMuchSleepPage() {
       {/* Adults deep dive */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
+          <h2 id="adults" className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
             How Much Sleep Do Adults Need?
           </h2>
           <div className="grid sm:grid-cols-3 gap-4 mb-8">
@@ -168,7 +182,7 @@ export default function HowMuchSleepPage() {
 
       {/* Sleep deprivation signs */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-        <h2 className="text-2xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+        <h2 id="deprivation-signs" className="text-2xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
           Signs You&apos;re Not Getting Enough Sleep
         </h2>
         <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
@@ -189,7 +203,7 @@ export default function HowMuchSleepPage() {
       {/* Factors affecting sleep */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
+          <h2 id="factors" className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
             Factors That Affect How Much Sleep You Need
           </h2>
           <div className="space-y-4">
@@ -216,6 +230,28 @@ export default function HowMuchSleepPage() {
 
       {/* SEO Long-Form Content */}
       <HowMuchSleepContent />
+
+      {/* Related Tools */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-6">
+        <h2 className="text-xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>Related Tools</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            { href: "/sleep-debt-calculator/", icon: "💤", t: "Sleep Debt Calculator", d: "Find out how much sleep you owe your body" },
+            { href: "/bedtime-calculator/", icon: "🌙", t: "Bedtime Calculator", d: "Find your ideal bedtime based on sleep cycles" },
+            { href: "/sleep-cycle-calculator/", icon: "🔄", t: "Sleep Cycle Calculator", d: "Understand how your sleep cycles work" },
+          ].map((item) => (
+            <Link key={item.href} href={item.href}
+              className="rounded-2xl p-5 flex gap-3 hover:scale-[1.02] transition-all"
+              style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+              <span className="text-2xl">{item.icon}</span>
+              <div>
+                <p className="font-semibold text-sm" style={{ color: "var(--text-primary)" }}>{item.t}</p>
+                <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>{item.d}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">

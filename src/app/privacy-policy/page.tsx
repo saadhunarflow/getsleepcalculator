@@ -5,7 +5,14 @@ export const metadata: Metadata = {
   title: "Privacy Policy – Get Sleep Calculator",
   description: "Privacy policy for getsleepcalculator.net — how we collect, use, and protect your information.",
   alternates: { canonical: "https://getsleepcalculator.net/privacy-policy/" },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Privacy Policy – Get Sleep Calculator",
+    description: "Privacy policy for getsleepcalculator.net — how we collect, use, and protect your information.",
+    url: "https://getsleepcalculator.net/privacy-policy/",
+    siteName: "Get Sleep Calculator",
+    type: "website",
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -17,6 +17,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "if-i-sleep-at-10-what-time-should-i-wake-up",
+    title: "If I Sleep at 10 PM, What Time Should I Wake Up? (Sleep Cycle Chart)",
+    excerpt: "Find the exact best times to wake up if you go to bed at 10 PM. Based on 90-minute sleep cycles — includes a full chart for 9 PM to 2 AM bedtimes.",
+    category: "Sleep Cycles",
+    categoryColor: "#06b6d4",
+    date: "June 5, 2026",
+    readTime: "7 min read",
+    emoji: "🌙",
+  },
+  {
     slug: "how-to-fall-asleep-faster",
     title: "How to Fall Asleep Faster: 12 Science-Backed Tips",
     excerpt: "Struggling to fall asleep? These 12 evidence-based techniques can reduce your sleep onset time from 30+ minutes to under 10 minutes.",

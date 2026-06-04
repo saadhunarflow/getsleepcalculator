@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, breadcrumbSchema } from "@/lib/seo";
 import Link from "next/link";
+import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Insomnia: Causes, Types & Proven Treatments (CBT-I Guide)",
@@ -164,6 +165,16 @@ const symptoms = [
 ];
 
 export default function InsomniaPage() {
+
+const tocItems: TocItem[] = [
+  { id: "vs-deprivation", text: "Insomnia vs. Sleep Deprivation", level: 2 },
+  { id: "types", text: "Types of Insomnia", level: 2 },
+  { id: "symptoms", text: "Symptoms of Insomnia", level: 2 },
+  { id: "3p-model", text: "Why Insomnia Becomes Chronic: The 3P Model", level: 2 },
+  { id: "cbti", text: "CBT-I: The Gold Standard Treatment", level: 2 },
+  { id: "faq", text: "Frequently Asked Questions", level: 2 },
+];
+
   return (
     <>
       <script
@@ -216,11 +227,17 @@ export default function InsomniaPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontSize: "0.8rem", marginTop: "1rem", color: "var(--text-muted)" }}>Last updated: June 2026</p>
+        </section>
+
+        {/* Table of Contents */}
+        <section style={{ maxWidth: "800px", margin: "0 auto 2rem" }}>
+          <TableOfContents items={tocItems} />
         </section>
 
         {/* Insomnia vs Sleep Deprivation */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="vs-deprivation" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Insomnia vs. Sleep Deprivation
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
@@ -260,7 +277,7 @@ export default function InsomniaPage() {
 
         {/* Types */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="types" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Types of Insomnia
           </h2>
           <div style={{ overflowX: "auto" }}>
@@ -288,7 +305,7 @@ export default function InsomniaPage() {
 
         {/* Symptoms */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="symptoms" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Symptoms of Insomnia
           </h2>
           <p style={{ color: "var(--text-muted)", marginBottom: "1rem", fontSize: "0.95rem" }}>
@@ -309,7 +326,7 @@ export default function InsomniaPage() {
 
         {/* The 3P Model */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="3p-model" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Why Insomnia Becomes Chronic: The 3P Model
           </h2>
           <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: "1.25rem" }}>
@@ -334,7 +351,7 @@ export default function InsomniaPage() {
 
         {/* CBT-I Components */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem" }}>
+          <h2 id="cbti" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem" }}>
             CBT-I: The Gold Standard Treatment
           </h2>
           <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
@@ -376,7 +393,7 @@ export default function InsomniaPage() {
 
         {/* FAQ */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>
+          <h2 id="faq" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>
             Frequently Asked Questions
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -385,6 +402,26 @@ export default function InsomniaPage() {
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>{q}</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", lineHeight: 1.7, margin: 0 }}>{a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Tools */}
+        <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>Related Tools</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem" }}>
+            {[
+              { href: "/sleep-schedule-builder/", icon: "📅", t: "Sleep Schedule Builder", d: "Build a consistent sleep schedule — a CBT-I cornerstone" },
+              { href: "/sleep-debt-calculator/", icon: "💤", t: "Sleep Debt Calculator", d: "Track your cumulative sleep deficit" },
+              { href: "/bedtime-calculator/", icon: "🌙", t: "Bedtime Calculator", d: "Find your ideal bedtime based on sleep cycles" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href}
+                style={{ display: "block", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem", textDecoration: "none", transition: "transform 0.15s" }}
+              >
+                <span style={{ fontSize: "1.6rem", display: "block", marginBottom: "0.4rem" }}>{item.icon}</span>
+                <p style={{ fontWeight: 700, color: "var(--text-primary)", fontSize: "0.95rem", margin: "0 0 0.25rem" }}>{item.t}</p>
+                <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", margin: 0 }}>{item.d}</p>
+              </Link>
             ))}
           </div>
         </section>

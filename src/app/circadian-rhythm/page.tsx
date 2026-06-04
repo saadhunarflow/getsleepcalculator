@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, breadcrumbSchema } from "@/lib/seo";
 import Link from "next/link";
+import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Circadian Rhythm – What It Is, How It Works & How to Fix It",
@@ -96,6 +97,16 @@ const resetTips = [
 ];
 
 export default function CircadianRhythmPage() {
+
+const tocItems: TocItem[] = [
+  { id: "what-is", text: "What Is the Circadian Rhythm?", level: 2 },
+  { id: "24-hour-timeline", text: "Your Circadian Rhythm: A 24-Hour Timeline", level: 2 },
+  { id: "disruptors", text: "What Disrupts Your Circadian Rhythm?", level: 2 },
+  { id: "how-to-reset", text: "How to Reset Your Circadian Rhythm", level: 2 },
+  { id: "chronotypes", text: "Chronotypes: Why Some People Are Night Owls", level: 2 },
+  { id: "faq", text: "Frequently Asked Questions", level: 2 },
+];
+
   return (
     <>
       <script
@@ -133,11 +144,17 @@ export default function CircadianRhythmPage() {
           <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", lineHeight: 1.8 }}>
             Every cell in your body runs on a ~24-hour timer. Your circadian rhythm governs when you feel sleepy, when you&apos;re most alert, when hormones peak, and even when your body repairs itself. Understanding it is the foundation of better sleep.
           </p>
+          <p style={{ fontSize: "0.8rem", marginTop: "1rem", color: "var(--text-muted)" }}>Last updated: June 2026</p>
+        </section>
+
+        {/* Table of Contents */}
+        <section style={{ maxWidth: "800px", margin: "0 auto 2rem" }}>
+          <TableOfContents items={tocItems} />
         </section>
 
         {/* What is Circadian Rhythm */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="what-is" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             What Is the Circadian Rhythm?
           </h2>
           <div style={{ color: "var(--text-muted)", lineHeight: 1.8, fontSize: "0.97rem" }}>
@@ -155,7 +172,7 @@ export default function CircadianRhythmPage() {
 
         {/* 24-Hour Timeline */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="24-hour-timeline" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Your Circadian Rhythm: A 24-Hour Timeline
           </h2>
           <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem", fontSize: "0.95rem" }}>
@@ -184,7 +201,7 @@ export default function CircadianRhythmPage() {
 
         {/* Circadian Disruptors */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="disruptors" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             What Disrupts Your Circadian Rhythm?
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
@@ -211,7 +228,7 @@ export default function CircadianRhythmPage() {
 
         {/* How to Reset */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="how-to-reset" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             How to Reset Your Circadian Rhythm
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
@@ -231,7 +248,7 @@ export default function CircadianRhythmPage() {
 
         {/* Chronotypes */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
+          <h2 id="chronotypes" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Chronotypes: Why Some People Are Night Owls
           </h2>
           <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1rem", fontSize: "0.97rem" }}>
@@ -255,7 +272,7 @@ export default function CircadianRhythmPage() {
 
         {/* FAQ */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>
+          <h2 id="faq" style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>
             Frequently Asked Questions
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -268,7 +285,27 @@ export default function CircadianRhythmPage() {
           </div>
         </section>
 
-        {/* Related Tools & Articles */}
+        {/* Related Tools */}
+        <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>Related Tools</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem" }}>
+            {[
+              { href: "/sleep-schedule-builder/", icon: "📅", t: "Sleep Schedule Builder", d: "Align your daily schedule to your circadian rhythm" },
+              { href: "/chronotype-calculator/", icon: "🦦", t: "Chronotype Calculator", d: "Discover if you're a morning lark or night owl" },
+              { href: "/bedtime-calculator/", icon: "🌙", t: "Bedtime Calculator", d: "Find your ideal bedtime based on sleep cycles" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href}
+                style={{ display: "block", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem", textDecoration: "none", transition: "transform 0.15s" }}
+              >
+                <span style={{ fontSize: "1.6rem", display: "block", marginBottom: "0.4rem" }}>{item.icon}</span>
+                <p style={{ fontWeight: 700, color: "var(--text-primary)", fontSize: "0.95rem", margin: "0 0 0.25rem" }}>{item.t}</p>
+                <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", margin: 0 }}>{item.d}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Articles & Tools */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
           <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>
             Related Articles & Tools
