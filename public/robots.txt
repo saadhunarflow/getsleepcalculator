@@ -1,9 +1,47 @@
-# *
+# All crawlers — default allow
 User-agent: *
 Allow: /
+Disallow: /contact
+Disallow: /privacy-policy
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /*?*
 
-# Host
-Host: https://getsleepcalculator.net
+# Google — all bots
+User-agent: Googlebot
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Microsoft Copilot / Bing
+User-agent: Bingbot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
 
 # Sitemaps
 Sitemap: https://getsleepcalculator.net/sitemap.xml
+Sitemap: https://getsleepcalculator.net/sitemap-0.xml
+
+# Host
+Host: https://getsleepcalculator.net
