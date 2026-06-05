@@ -43,5 +43,3 @@ Allow: /
 Sitemap: https://getsleepcalculator.net/sitemap.xml
 Sitemap: https://getsleepcalculator.net/sitemap-0.xml
 
-# Host
-Host: https://getsleepcalculator.net
