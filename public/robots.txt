@@ -1,4 +1,4 @@
-# All crawlers — default allow
+# All crawlers - default allow
 User-agent: *
 Allow: /
 Disallow: /contact
@@ -8,7 +8,7 @@ Disallow: /_next/
 Disallow: /404
 Disallow: /*?*
 
-# Google — all bots
+# Google - all bots
 User-agent: Googlebot
 Allow: /
 
