@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -19,158 +19,113 @@ const schemaOrg = {
   "@type": "Organization",
   name: "Get Sleep Calculator",
   url: "https://getsleepcalculator.net",
-  description:
-    "Free science-based sleep calculator tools helping people find their ideal bedtime and wake-up time based on natural 90-minute sleep cycles.",
+  description: "Free science-based sleep calculator tools helping people find their ideal bedtime and wake-up time.",
   logo: "https://getsleepcalculator.net/og-image.png",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    url: "https://getsleepcalculator.net/contact",
-  },
+  contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: "https://getsleepcalculator.net/contact" },
 };
 
-const tools = [
-  { href: "/bedtime-calculator/", icon: "🛏️", title: "Bedtime Calculator", desc: "Find the perfect bedtime from your wake-up time" },
-  { href: "/wake-up-time-calculator/", icon: "⏰", title: "Wake-Up Calculator", desc: "Find the best wake-up time from your bedtime" },
-  { href: "/nap-calculator/", icon: "😴", title: "Nap Calculator", desc: "Power nap and full-cycle nap timing" },
-  { href: "/sleep-debt-calculator/", icon: "📊", title: "Sleep Debt Calculator", desc: "Track your weekly accumulated sleep debt" },
-  { href: "/sleep-cycle-calculator/", icon: "🔄", title: "Sleep Cycle Calculator", desc: "Visualize your full sleep architecture" },
-  { href: "/chronotype-calculator/", icon: "🦁", title: "Chronotype Calculator", desc: "Discover if you are a Lion, Bear, Wolf, or Dolphin" },
-];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "Is Get Sleep Calculator free?", acceptedAnswer: { "@type": "Answer", text: "Yes — all 13 tools are completely free, no signup required, no premium tiers." } },
+    { "@type": "Question", name: "How accurate is the sleep calculator?", acceptedAnswer: { "@type": "Answer", text: "The calculator uses the NSF-standard 90-minute cycle length and 14-minute average sleep latency. Individual results may vary." } },
+    { "@type": "Question", name: "Who created Get Sleep Calculator?", acceptedAnswer: { "@type": "Answer", text: "Get Sleep Calculator was built by a software developer based in Pakistan. All content is based on peer-reviewed research from NSF, CDC, and AASM." } },
+  ],
+};
 
 export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.15) 0%, transparent 70%), var(--bg-primary)",
-          paddingTop: "3.5rem",
-          paddingBottom: "3.5rem",
-        }}
-      >
+      <section style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.15) 0%, transparent 70%), var(--bg-primary)", paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <nav className="text-xs mb-6" style={{ color: "var(--text-muted)" }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2">›</span>
             <span style={{ color: "var(--accent-light)" }}>About</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "var(--text-primary)" }}>
-            About GetSleepCalculator.net
-          </h1>
-          <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--text-muted)" }}>
-            We build free, science-based sleep tools to help people understand their sleep and wake up feeling
-            genuinely refreshed — not just &quot;rested enough.&quot;
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>About Get Sleep Calculator</h1>
+          <p className="text-lg sm:text-xl leading-relaxed max-w-2xl font-medium" style={{ color: "var(--text-muted)" }}>
+            A free, science-backed sleep tool built by a developer who was tired of waking up exhausted — and decided to do something about it.
           </p>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-        <div className="grid sm:grid-cols-2 gap-8 items-center">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+        <div className="space-y-14">
           <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>Our Mission</h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-              Sleep is the single most important factor in physical health, cognitive performance, and emotional
-              wellbeing — yet most people have never been taught the basic science of how sleep works.
-            </p>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-              <strong style={{ color: "var(--text-primary)" }}>GetSleepCalculator.net</strong> exists to close
-              that gap. Every tool on this site is built on peer-reviewed research from the{" "}
-              <strong style={{ color: "var(--text-primary)" }}>National Sleep Foundation (NSF)</strong>,
-              the <strong style={{ color: "var(--text-primary)" }}>American Academy of Sleep Medicine (AASM)</strong>,
-              and leading sleep researchers including Matthew Walker and Dr. Russell Foster.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Our tools are 100% free, require no signup, and process all calculations locally in your browser —
-              your data never leaves your device.
-            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>Why I Built This</h2>
+            <div className="space-y-4 text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>
+              <p>I&apos;m a software developer based in Pakistan. A few years ago, I was struggling with something that millions of people deal with silently: waking up completely drained despite sleeping a reasonable number of hours. Nine hours one night, feel groggy. Six hours another, feel worse. Nothing worked consistently.</p>
+              <p>So I did what developers do — I researched the problem. I spent weeks reading academic papers, sleep lab findings, and public health guidelines. What I found changed everything. The issue was not just the <em>number</em> of hours slept. It was the <em>timing</em> within my sleep cycle. Human sleep moves through 90-minute cycles of light sleep, deep sleep, and REM. If your alarm fires mid-cycle — especially during deep sleep — you get hit with sleep inertia lasting up to an hour. But if your alarm fires at the end of a complete cycle, you wake naturally from light sleep and feel genuinely refreshed.</p>
+              <p>I started calculating my bedtimes manually — working backwards from my wake-up time in 90-minute blocks, adding 14 minutes for the average sleep onset time. It worked. I started waking up feeling like a different person. But the manual math was tedious every night. I searched for a tool to do it for me and found only ad-laden, paywalled apps requiring accounts to answer a simple question.</p>
+              <p>That frustration became this site. GetSleepCalculator.net started as a personal project over a weekend in Pakistan, turned into something I wanted to share globally. It grew from one calculator to 13 free tools, and will stay completely free — no ads on calculator results, no account required.</p>
+            </div>
           </div>
-          <div className="rounded-3xl p-8 text-center"
-            style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
-            <div className="text-5xl mb-4">🌙</div>
-            <p className="text-3xl font-extrabold mb-1" style={{ color: "var(--accent-light)" }}>90 min</p>
-            <p className="text-sm mb-4" style={{ color: "var(--text-muted)" }}>The science behind every tool</p>
-            <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              All our calculators are built around the 90-minute sleep cycle — the fundamental unit of human sleep
-              architecture, consistent across all research since Nathaniel Kleitman&apos;s 1953 discovery of REM sleep.
-            </p>
+
+          <div className="p-8 sm:p-10 rounded-3xl" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>Our Mission</h2>
+            <p className="text-base sm:text-lg leading-loose mb-4" style={{ color: "var(--text-muted)" }}>The mission is simple: make sleep science accessible and free for everyone. Sleep is one of the most researched areas of human health, yet most people have never been taught how their sleep actually works. Most tools that could help are locked behind subscriptions or buried in ads. That should not be the case.</p>
+            <p className="text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>All 13 tools are entirely free — no account required, no credit card, no premium tier. That is a permanent commitment. Sleep science should be available to a student in Karachi the same way it is to an executive in New York.</p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>How We Ensure Accuracy</h2>
+            <div className="space-y-4 text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>
+              <p>Every calculation on this site is grounded in the same research that sleep labs use. Our methodology relies on three primary sources: the <a href="https://www.thensf.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>National Sleep Foundation (NSF)</a>, the Centers for Disease Control and Prevention (CDC), and the American Academy of Sleep Medicine (AASM). These organizations publish the consensus guidelines that doctors and sleep researchers use worldwide.</p>
+              <p>Our core calculation methodology: take your target wake time, subtract 14 minutes (the NSF-documented average sleep latency), then count backward in 90-minute increments. Each result is a natural cycle boundary — the point where sleep is lightest and waking feels easiest. We review and update content when new guidelines are published.</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>What Makes This Different</h2>
+            <p className="text-base sm:text-lg leading-loose mb-6" style={{ color: "var(--text-muted)" }}>There are plenty of sleep apps. Here is what sets Get Sleep Calculator apart:</p>
+            <ul className="space-y-4">
+              {[
+                { icon: "🧰", t: "13 free sleep tools in one place", d: "Bedtime, wake-up, nap, sleep debt, sleep cycles, REM, chronotype, jet lag, schedule builder, and more — all under one roof." },
+                { icon: "👶", t: "Age-specific recommendations (NSF guidelines)", d: "Our calculators for kids, babies, and adults use NSF age-group sleep recommendations — not a one-size-fits-all number." },
+                { icon: "🚫", t: "No ads on calculator results", d: "The results pages are clean. No banners, no pop-ups, no promoted content interrupting your sleep data." },
+                { icon: "🔓", t: "No account required", d: "Open the calculator, enter your time, get your results. No registration form, no email verification, no password." },
+                { icon: "📱", t: "Mobile-friendly, instant results", d: "Every tool works on any device — phone, tablet, or desktop — and results appear instantly with no loading spinner." },
+              ].map((item) => (
+                <li key={item.t} className="flex gap-4 items-start rounded-2xl p-5" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                  <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
+                  <div>
+                    <p className="font-bold text-base mb-1" style={{ color: "var(--text-primary)" }}>{item.t}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>The Science Behind Sleep Cycles</h2>
+            <div className="space-y-4 text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>
+              <p>Sleep is not one continuous state. Each night, your brain cycles through four distinct stages: NREM Stage 1 (light sleep, lasting a few minutes), NREM Stage 2 (core sleep, the largest portion of each cycle), NREM Stage 3 (deep slow-wave sleep, most physically restorative), and REM sleep (where most dreaming and memory consolidation happen). One complete pass through all four stages takes approximately 90 minutes — and this repeats 4 to 6 times per night.</p>
+              <p>Two things make cycle alignment so important. First, deep sleep (NREM Stage 3) is hardest to wake from — forcing yourself awake during this stage triggers sleep inertia that can impair cognitive function for up to 90 minutes. Second, REM sleep is concentrated in later cycles, so people who consistently cut their sleep short are disproportionately losing the most cognitively valuable part of their night. By timing your alarm to a cycle boundary — where sleep is lightest, right after REM — you wake naturally and feel energized, regardless of whether you got 6 or 9 hours total.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How we work */}
-      <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>How Our Tools Work</h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { icon: "🔬", t: "Science-Based", d: "Every recommendation is grounded in peer-reviewed sleep research. We cite our sources and update content when new findings emerge." },
-              { icon: "🔒", t: "Privacy First", d: "All calculations happen in your browser. We don't store, sell, or process any personal data. What you enter stays on your device." },
-              { icon: "✅", t: "Accuracy", d: "Our calculators use the 90-minute cycle standard + 14-minute sleep onset average, consistent with NSF and AASM guidelines." },
-            ].map((item) => (
-              <div key={item.t} className="rounded-2xl p-5"
-                style={{ background: "var(--bg-primary)", border: "1px solid var(--border)" }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="font-bold mb-2 text-sm" style={{ color: "var(--text-primary)" }}>{item.t}</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>{item.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tools overview */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>Our Tools</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {tools.map((tool) => (
-            <Link key={tool.href} href={tool.href}
-              className="rounded-2xl p-5 flex gap-4 hover:scale-[1.01] transition-all"
-              style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
-              <span className="text-3xl shrink-0">{tool.icon}</span>
-              <div>
-                <p className="font-semibold text-sm mb-1" style={{ color: "var(--text-primary)" }}>{tool.title}</p>
-                <p className="text-xs" style={{ color: "var(--text-muted)" }}>{tool.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="mt-6 text-center">
-          <Link href="/" className="text-sm underline" style={{ color: "var(--accent-light)" }}>
-            View all sleep tools →
-          </Link>
-        </div>
-      </section>
-
-      {/* Disclaimer */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-          <div className="rounded-2xl p-5 text-xs leading-relaxed"
-            style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "var(--text-muted)" }}>
+          <div className="rounded-2xl p-6 text-sm leading-relaxed" style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "var(--text-muted)" }}>
             <strong style={{ color: "#f59e0b" }}>⚠️ Medical Disclaimer: </strong>
-            The tools and content on GetSleepCalculator.net are for informational and educational purposes only.
-            They are not a substitute for professional medical advice, diagnosis, or treatment. If you have
-            persistent sleep problems, please consult a qualified healthcare provider or sleep specialist.
-            Conditions like sleep apnea, insomnia disorder, and narcolepsy require clinical evaluation.
+            The tools and content on GetSleepCalculator.net are for informational and educational purposes only. They are not a substitute for professional medical advice, diagnosis, or treatment. If you have persistent sleep problems, please consult a qualified healthcare provider or sleep specialist.
           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
-        <div className="rounded-3xl p-8 text-center"
-          style={{ background: "linear-gradient(135deg, rgba(108,99,255,0.2), rgba(167,139,250,0.1))", border: "1px solid rgba(108,99,255,0.3)" }}>
-          <h2 className="text-xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>Questions or Feedback?</h2>
-          <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
-            We welcome feedback, corrections, and feature suggestions.
-          </p>
-          <Link href="/contact/" className="px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-all"
-            style={{ background: "var(--accent)", color: "#fff" }}>
-            Contact Us →
-          </Link>
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <div className="rounded-3xl p-10 text-center" style={{ background: "linear-gradient(135deg, rgba(108,99,255,0.2), rgba(167,139,250,0.1))", border: "1px solid rgba(108,99,255,0.3)" }}>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>Questions or Feedback?</h2>
+          <p className="text-base sm:text-lg mb-8 max-w-xl mx-auto" style={{ color: "var(--text-muted)" }}>If you have a suggestion, found a bug, or want to share how the calculator helped you — I would love to hear it.</p>
+          <Link href="/contact/" className="inline-block px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all text-lg shadow-lg" style={{ background: "var(--accent)", color: "#fff" }}>Get in Touch →</Link>
         </div>
       </section>
     </>

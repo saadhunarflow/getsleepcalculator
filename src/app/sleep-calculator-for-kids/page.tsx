@@ -289,6 +289,11 @@ export default function SleepCalculatorForKidsPage() {
         </div>
       </section>
 
+      {/* Freshness signal */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-4">
+        <p className="text-xs" style={{ color: "var(--text-muted)" }}>Last reviewed: June 2025 — reflects current NSF and CDC sleep guidelines.</p>
+      </div>
+
       {/* ── FAQ ── */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14">

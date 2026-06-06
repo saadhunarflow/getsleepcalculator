@@ -131,7 +131,7 @@ export default function SleepDebtContent() {
           { title: "Know your actual sleep need", desc: "Most adults need 7–9 hours. A simple test: on your next vacation, sleep without an alarm for several days. The hours you naturally stabilize at are your true need — not your habitual hours." },
           { title: "Protect your bedtime like an appointment", desc: "Schedule your bedtime before scheduling evening activities. Most sleep debt accumulates gradually through late nights, not dramatic events." },
           { title: "Maintain consistent timing on weekends", desc: "Staying up 2–3 hours later on Friday shifts your circadian rhythm, creates social jet lag, and makes Monday feel like the worst day of the week. A 1-hour variance is manageable; 2+ hours causes noticeable debt and rhythm disruption." },
-          { title: "Address sleep disruptors directly", desc: "If you're consistently waking up at 3 AM, or taking more than 30 minutes to fall asleep, there's an underlying cause — stress, alcohol, sleep apnea, screen exposure — that no amount of earlier bedtimes will fully fix." },
+          { title: "Address sleep disruptors directly", desc: "If you're consistently waking up at 3 AM, or taking more than 30 minutes to fall asleep, there's an underlying cause — stress, alcohol, sleep apnea, screen exposure — that no amount of earlier bedtimes will fully fix. A consistent weekly schedule built with a <a href='/sleep-schedule-builder/' style='color:var(--accent-light)'>sleep schedule builder</a> can help make your new routine stick." },
         ].map(({ title, desc }) => (
           <div key={title} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem 1.5rem" }}>
             <p style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.4rem", fontSize: "0.95rem" }}>{title}</p>
@@ -141,6 +141,9 @@ export default function SleepDebtContent() {
       </div>
 
       {divider}
+
+      {/* Freshness signal */}
+      <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginBottom: "1.5rem" }}>Last reviewed: June 2025 — reflects current NSF and CDC sleep guidelines.</p>
 
       {/* FAQ */}
       <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem" }}>

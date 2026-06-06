@@ -75,6 +75,12 @@ export default function Post3() {
         </section>
 
         <section className="max-w-2xl mx-auto px-4 py-12" style={{ color: "var(--text-secondary)", fontSize: 15, lineHeight: 1.9 }}>
+          {/* Key Insight */}
+          <div style={{ background: "var(--bg-card)", borderLeft: "4px solid var(--accent)", borderRadius: 10, padding: "1.1rem 1.25rem", marginBottom: "1.5rem" }}>
+            <p className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: "var(--accent-light)" }}>Key Insight</p>
+            <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.75 }}>For a 10 PM bedtime, the scientifically optimal wake times are 5:44 AM (5 cycles) or 7:14 AM (6 cycles) — not 6:00 AM or 7:00 AM.</p>
+          </div>
+
           <TableOfContents items={[
             { id: "sleep-cycle-rule", text: "The 90-Minute Sleep Cycle Rule", level: 2 },
             { id: "ideal-wake-times", text: "Ideal Wake Times Table", level: 3 },

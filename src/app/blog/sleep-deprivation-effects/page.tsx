@@ -85,6 +85,12 @@ export default function Post4() {
         </section>
 
         <section className="max-w-2xl mx-auto px-4 py-12" style={{ color: "var(--text-secondary)", fontSize: 15, lineHeight: 1.9 }}>
+          {/* Key Insight */}
+          <div style={{ background: "var(--bg-card)", borderLeft: "4px solid var(--accent)", borderRadius: 10, padding: "1.1rem 1.25rem", marginBottom: "1.5rem" }}>
+            <p className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: "var(--accent-light)" }}>Key Insight</p>
+            <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.75 }}>After 17 hours without sleep, cognitive impairment equals a blood alcohol level of 0.05% — the legal limit in many countries.</p>
+          </div>
+
           <TableOfContents items={[
             { id: "hour-by-hour-timeline", text: "Hour-by-Hour Timeline", level: 2 },
             { id: "your-brain", text: "Your Brain: The Biggest Loser", level: 2 },

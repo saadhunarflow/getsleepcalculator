@@ -87,7 +87,7 @@ export default function SEOContent() {
         <div style={{ marginBottom: "3rem" }}>
           <h2 style={h2Style}>What Is a Sleep Calculator?</h2>
           <p style={pStyle}>A sleep calculator is a simple tool that tells you the best times to fall asleep or wake up based on how human sleep actually works. Your body does not sleep in one long stretch — it moves through repeating cycles, each lasting about 90 minutes. Waking up naturally at the end of a full cycle means you feel alert and refreshed. Waking up in the middle of one — especially during deep sleep — is why you sometimes feel worse after a full eight hours than after seven.</p>
-          <p style={pStyle}>The calculator takes your target time (either when you need to wake up or when you plan to go to bed), adds roughly 14 minutes for the average time it takes to fall asleep, and then lists every bedtime or wake-up window that lines up with a complete cycle.</p>
+          <p style={pStyle}>The calculator takes your target time (either when you need to wake up or when you plan to go to bed), adds roughly 14 minutes — the average sleep latency, or time it takes most people to fall asleep — and then lists every bedtime or wake-up window that lines up with a complete cycle.</p>
         </div>
 
         {divider}
@@ -104,7 +104,7 @@ export default function SEOContent() {
               </div>
             ))}
           </div>
-          <p style={pStyle}>A healthy night typically includes 5 to 6 complete cycles, adding up to 7.5 to 9 hours of sleep. The calculator works like this:</p>
+          <p style={pStyle}>A healthy night typically includes 5 to 6 complete cycles, adding up to 7.5 to 9 hours of sleep — and the arrangement of those stages across the night is what sleep scientists call sleep architecture. The calculator works like this:</p>
           <ol style={{ paddingLeft: "1.25rem", color: "var(--text-muted)", fontSize: 14, lineHeight: 2.1 }}>
             <li>You enter the time you need to wake up.</li>
             <li>The tool works backward in 90-minute blocks.</li>
@@ -305,7 +305,7 @@ export default function SEOContent() {
         {/* Improve Sleep Quality */}
         <div style={{ marginBottom: "3rem" }}>
           <h2 style={h2Style}>How to Improve Sleep Quality (Beyond Just the Timing)</h2>
-          <p style={pStyle}>Getting the timing right is one piece of the puzzle. Sleep quality — how deep and uninterrupted your sleep is — matters just as much as duration. A few habits that research consistently backs:</p>
+          <p style={pStyle}>Getting the timing right is one piece of the puzzle. Sleep quality — measured in part through sleep efficiency, the ratio of actual sleep time to total time spent in bed — matters just as much as duration. A few habits that research consistently backs:</p>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {qualityTips.map((item, i) => (
               <li key={i} style={{ display: "flex", gap: "0.75rem", background: "var(--bg-card)", borderRadius: 10, padding: "0.75rem 1rem", border: "1px solid var(--border)", fontSize: 13 }}>

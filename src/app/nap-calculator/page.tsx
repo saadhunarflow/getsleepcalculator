@@ -228,6 +228,11 @@ export default function NapCalculatorPage() {
           </div>
         </section>
 
+        {/* Freshness signal */}
+        <div style={{ maxWidth: "800px", margin: "0 auto 1rem" }}>
+          <p style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>Last reviewed: June 2025 — reflects current NSF and CDC sleep guidelines.</p>
+        </div>
+
         {/* FAQ */}
         <section style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
           <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>

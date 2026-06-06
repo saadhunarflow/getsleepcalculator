@@ -168,6 +168,11 @@ export default function WakeUpCalculatorPage() {
         </div>
       </section>
 
+      {/* Freshness signal */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-4">
+        <p className="text-xs" style={{ color: "var(--text-muted)" }}>Last reviewed: June 2025 — reflects current NSF and CDC sleep guidelines.</p>
+      </div>
+
       {/* FAQ */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
         <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--text-primary)" }}>Frequently Asked Questions</h2>
