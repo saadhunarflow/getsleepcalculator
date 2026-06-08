@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – Get Sleep Calculator",
-  description: "Privacy policy for getsleepcalculator.net — how we collect, use, and protect your information.",
+  title: "Privacy Policy | Sleep Calculator",
+  description: "Read our privacy policy. We are a privacy-first platform; all sleep calculations are processed locally on your device with zero server-side data collection.",
   alternates: { canonical: "https://getsleepcalculator.net/privacy-policy/" },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Privacy Policy – Get Sleep Calculator",
-    description: "Privacy policy for getsleepcalculator.net — how we collect, use, and protect your information.",
+    title: "Privacy Policy | Sleep Calculator",
+    description: "Read our privacy policy. We are a privacy-first platform; all sleep calculations are processed locally on your device with zero server-side data collection.",
     url: "https://getsleepcalculator.net/privacy-policy/",
     siteName: "Get Sleep Calculator",
     type: "website",
@@ -36,6 +36,11 @@ export default function PrivacyPolicyPage() {
         <p className="text-sm mb-10" style={{ color: "var(--text-muted)" }}>
           Last updated: May 28, 2026
         </p>
+
+        <div className="rounded-2xl p-5 mb-10 text-sm leading-relaxed" style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.25)", color: "var(--text-muted)" }}>
+          <p className="font-bold mb-1" style={{ color: "#10b981" }}>🔒 Zero-Data Collection Policy</p>
+          <p>All sleep calculator inputs — including bedtimes, wake times, age, and nap durations — are processed <strong style={{ color: "var(--text-primary)" }}>entirely on your device</strong>. No calculation data is ever transmitted to, stored on, or accessed by our servers. Your sleep data stays yours, locally, always.</p>
+        </div>
 
         <div className="space-y-10 text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
 
@@ -113,11 +118,11 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold mb-3" style={{ color: "var(--text-primary)" }}>5. Google Analytics</h2>
+            <h2 className="text-lg font-bold mb-3" style={{ color: "var(--text-primary)" }}>5. Google Analytics (GA4)</h2>
             <p>
-              We use Google Analytics to collect anonymized information about how visitors use our site.
-              Google Analytics uses cookies to collect data about your visits. This data is used to compile
-              reports on website activity. Google Analytics collects information anonymously — it reports website
+              We use <strong style={{ color: "var(--text-primary)" }}>Google Analytics 4 (GA4)</strong> to collect anonymized information about how visitors use our site.
+              GA4 uses cookies to collect data about your visits. This data is used to compile
+              reports on website activity. GA4 collects information anonymously — it reports website
               trends without identifying individual visitors. You can opt out of Google Analytics by installing the{" "}
               <a
                 href="https://tools.google.com/dlpage/gaoptout"

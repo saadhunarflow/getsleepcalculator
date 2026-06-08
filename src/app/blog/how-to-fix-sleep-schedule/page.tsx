@@ -33,12 +33,13 @@ export default function Post5() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: "How to Fix Your Sleep Schedule in 7 Days",
+        description: "Reset your sleep schedule in 7 days with this step-by-step science protocol. Fix your circadian rhythm using anchor times and morning light. Free sleep schedule builder.",
         url: "https://getsleepcalculator.net/blog/how-to-fix-sleep-schedule/",
         datePublished: "2026-05-24",
         dateModified: "2026-05-24",
-        author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+        author: { "@type": "Person", name: "Saad Zaib", url: "https://getsleepcalculator.net/about/", sameAs: ["https://hunarflow.com"] },
         publisher: { "@type": "Organization", name: "Get Sleep Calculator", url: "https://getsleepcalculator.net", logo: { "@type": "ImageObject", url: "https://getsleepcalculator.net/og-image.png" } },
         image: "https://getsleepcalculator.net/og-image.png",
         mainEntityOfPage: { "@type": "WebPage", "@id": "https://getsleepcalculator.net/blog/how-to-fix-sleep-schedule/" },
@@ -88,7 +89,7 @@ export default function Post5() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>Last updated: May 24, 2026 · 7 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               How to Fix Your Sleep Schedule in 7 Days

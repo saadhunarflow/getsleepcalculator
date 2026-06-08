@@ -58,13 +58,13 @@ export default function Post2() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: "Why You Wake Up Tired Even After 8 Hours of Sleep",
-        description: "Waking up exhausted despite a full night's sleep? Here are the 8 most common reasons — and exactly how to fix each one.",
+        description: "Still tired after 8 hours? 8 proven causes of morning fatigue — from sleep inertia to sleep apnea — and exactly how to fix each. Science-backed solutions.",
         url: "https://getsleepcalculator.net/blog/why-you-wake-up-tired/",
         datePublished: "2026-05-27",
         dateModified: "2026-05-27",
-        author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+        author: { "@type": "Person", name: "Saad Zaib", url: "https://getsleepcalculator.net/about/", sameAs: ["https://hunarflow.com"] },
         publisher: { "@type": "Organization", name: "Get Sleep Calculator", url: "https://getsleepcalculator.net", logo: { "@type": "ImageObject", url: "https://getsleepcalculator.net/og-image.png" } },
         image: "https://getsleepcalculator.net/og-image.png",
         mainEntityOfPage: { "@type": "WebPage", "@id": "https://getsleepcalculator.net/blog/why-you-wake-up-tired/" },
@@ -101,7 +101,7 @@ export default function Post2() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>Last updated: May 27, 2026 · 8 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               Why You Wake Up Tired (Even After 8 Hours of Sleep)

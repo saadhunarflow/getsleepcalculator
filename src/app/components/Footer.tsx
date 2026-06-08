@@ -31,6 +31,7 @@ const companyLinks = [
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
+  { label: "Terms of Service", href: "/terms/" },
 ];
 
 export default function Footer() {
@@ -105,6 +106,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} getsleepcalculator.net — All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy-policy/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms/" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/about/" className="hover:text-white transition-colors">About</Link>
             <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
           </div>

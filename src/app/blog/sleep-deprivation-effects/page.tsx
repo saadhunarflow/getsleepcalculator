@@ -33,12 +33,13 @@ export default function Post4() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: "What Happens to Your Body After One Sleepless Night",
+        description: "Missing one night of sleep triggers measurable damage in 7 body systems. See the hour-by-hour timeline of what sleep deprivation does to your brain and body.",
         url: "https://getsleepcalculator.net/blog/sleep-deprivation-effects/",
         datePublished: "2026-05-25",
         dateModified: "2026-05-25",
-        author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+        author: { "@type": "Person", name: "Saad Zaib", url: "https://getsleepcalculator.net/about/", sameAs: ["https://hunarflow.com"] },
         publisher: { "@type": "Organization", name: "Get Sleep Calculator", url: "https://getsleepcalculator.net", logo: { "@type": "ImageObject", url: "https://getsleepcalculator.net/og-image.png" } },
         image: "https://getsleepcalculator.net/og-image.png",
         mainEntityOfPage: { "@type": "WebPage", "@id": "https://getsleepcalculator.net/blog/sleep-deprivation-effects/" },
@@ -73,7 +74,7 @@ export default function Post4() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>Last updated: May 25, 2026 · 9 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               What Happens to Your Body After One Sleepless Night

@@ -1,10 +1,7 @@
 # All crawlers - default allow
 User-agent: *
 Allow: /
-Disallow: /contact
-Disallow: /privacy-policy
 Disallow: /api/
-Disallow: /_next/
 Disallow: /404
 Disallow: /*?*
 

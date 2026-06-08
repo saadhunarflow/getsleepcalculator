@@ -20,13 +20,18 @@ export const metadata: Metadata = {
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: "If I Sleep at 10 PM, What Time Should I Wake Up? (Sleep Cycle Chart)",
   description: "Find the exact best times to wake up if you go to bed at 10 PM. Based on 90-minute sleep cycles — includes a full chart for 9 PM to 2 AM bedtimes.",
   url: "https://getsleepcalculator.net/blog/if-i-sleep-at-10-what-time-should-i-wake-up/",
   datePublished: "2026-06-05",
   dateModified: "2026-06-05",
-  author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+  author: {
+    "@type": "Person",
+    name: "Saad Zaib",
+    url: "https://getsleepcalculator.net/about/",
+    sameAs: ["https://hunarflow.com"],
+  },
   publisher: {
     "@type": "Organization",
     name: "Get Sleep Calculator",
@@ -114,7 +119,7 @@ export default function SleepAt10PMPost() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>· 7 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               If I Sleep at 10 PM, What Time Should I Wake Up?

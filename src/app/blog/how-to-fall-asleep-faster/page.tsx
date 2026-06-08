@@ -23,13 +23,13 @@ export default function Post1() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: "How to Fall Asleep Faster: 12 Science-Backed Tips",
         description: "Struggling to fall asleep? These 12 evidence-based techniques can reduce your sleep onset time from 30+ minutes to under 10 minutes.",
         url: "https://getsleepcalculator.net/blog/how-to-fall-asleep-faster/",
         datePublished: "2026-05-28",
         dateModified: "2026-05-28",
-        author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+        author: { "@type": "Person", name: "Saad Zaib", url: "https://getsleepcalculator.net/about/", sameAs: ["https://hunarflow.com"] },
         publisher: { "@type": "Organization", name: "Get Sleep Calculator", url: "https://getsleepcalculator.net", logo: { "@type": "ImageObject", url: "https://getsleepcalculator.net/og-image.png" } },
         image: "https://getsleepcalculator.net/og-image.png",
         mainEntityOfPage: { "@type": "WebPage", "@id": "https://getsleepcalculator.net/blog/how-to-fall-asleep-faster/" },
@@ -84,7 +84,7 @@ export default function Post1() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>· 7 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               How to Fall Asleep Faster: 12 Science-Backed Tips

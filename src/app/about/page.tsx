@@ -2,26 +2,74 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About – Get Sleep Calculator",
+  title: "About Us | Sleep Calculator",
   description:
-    "GetSleepCalculator.net provides free, science-based sleep tools — bedtime calculator, nap calculator, sleep debt tracker, and more — built on peer-reviewed sleep research.",
+    "Learn about the framework and science behind Sleep Calculator. Built privacy-first with client-side processing based on NSF and AASM guidelines.",
   alternates: { canonical: "https://getsleepcalculator.net/about/" },
   openGraph: {
-    title: "About – Get Sleep Calculator",
-    description: "GetSleepCalculator.net provides free, science-based sleep tools — bedtime calculator, nap calculator, sleep debt tracker, and more — built on peer-reviewed sleep research.",
+    type: "profile",
+    title: "About Us | Sleep Calculator",
+    description: "Learn about the framework and science behind Sleep Calculator. Built privacy-first with client-side processing based on NSF and AASM guidelines.",
     url: "https://getsleepcalculator.net/about/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },
 };
 
-const schemaOrg = {
+const graphSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Get Sleep Calculator",
-  url: "https://getsleepcalculator.net",
-  description: "Free science-based sleep calculator tools helping people find their ideal bedtime and wake-up time.",
-  logo: "https://getsleepcalculator.net/og-image.png",
-  contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: "https://getsleepcalculator.net/contact" },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://getsleepcalculator.net/#organization",
+      name: "Get Sleep Calculator",
+      url: "https://getsleepcalculator.net",
+      description: "Free science-based sleep calculator tools helping people find their ideal bedtime and wake-up time.",
+      logo: "https://getsleepcalculator.net/og-image.png",
+      contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: "https://getsleepcalculator.net/contact" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://getsleepcalculator.net/about/#creator",
+      name: "Sleep Calculator Creator",
+      jobTitle: "Full-Stack Developer & Creator",
+      knowsAbout: ["Sleep Science", "Circadian Rhythms", "Software Engineering"],
+      url: "https://getsleepcalculator.net/about",
+      sameAs: ["https://getsleepcalculator.net"],
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://getsleepcalculator.net/about/#webpage",
+      url: "https://getsleepcalculator.net/about/",
+      name: "About Us | Sleep Calculator",
+      description: "Learn about the framework and science behind Sleep Calculator. Built privacy-first with client-side processing based on NSF and AASM guidelines.",
+      isPartOf: { "@id": "https://getsleepcalculator.net/#organization" },
+      about: { "@id": "https://getsleepcalculator.net/#organization" },
+      author: { "@id": "https://getsleepcalculator.net/about/#creator" },
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://getsleepcalculator.net/about/#medicalwebpage",
+      url: "https://getsleepcalculator.net/about/",
+      name: "About Us | Sleep Calculator",
+      description: "Science-based sleep tools built by translating National Sleep Foundation and American Academy of Sleep Medicine guidelines into client-side code.",
+      aspect: "https://schema.org/HealthTopic",
+      about: { "@type": "MedicalCondition", name: "Sleep Disorders and Sleep Health" },
+      citation: [
+        {
+          "@type": "CreativeWork",
+          name: "National Sleep Foundation Sleep Guidelines",
+          url: "https://www.thensf.org",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "American Academy of Sleep Medicine Clinical Guidelines",
+          url: "https://aasm.org",
+        },
+      ],
+      author: { "@id": "https://getsleepcalculator.net/about/#creator" },
+      publisher: { "@id": "https://getsleepcalculator.net/#organization" },
+    },
+  ],
 };
 
 const faqSchema = {
@@ -37,7 +85,7 @@ const faqSchema = {
 export default function AboutPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.15) 0%, transparent 70%), var(--bg-primary)", paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
@@ -59,10 +107,11 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>Why I Built This</h2>
             <div className="space-y-4 text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>
-              <p>I&apos;m a software developer based in Pakistan. A few years ago, I was struggling with something that millions of people deal with silently: waking up completely drained despite sleeping a reasonable number of hours. Nine hours one night, feel groggy. Six hours another, feel worse. Nothing worked consistently.</p>
+              <p>I&apos;m a Full-Stack Software Developer based in Pakistan. A few years ago, I was struggling with something that millions of people deal with silently: waking up completely drained despite sleeping a reasonable number of hours. Nine hours one night, feel groggy. Six hours another, feel worse. Nothing worked consistently.</p>
               <p>So I did what developers do — I researched the problem. I spent weeks reading academic papers, sleep lab findings, and public health guidelines. What I found changed everything. The issue was not just the <em>number</em> of hours slept. It was the <em>timing</em> within my sleep cycle. Human sleep moves through 90-minute cycles of light sleep, deep sleep, and REM. If your alarm fires mid-cycle — especially during deep sleep — you get hit with sleep inertia lasting up to an hour. But if your alarm fires at the end of a complete cycle, you wake naturally from light sleep and feel genuinely refreshed.</p>
               <p>I started calculating my bedtimes manually — working backwards from my wake-up time in 90-minute blocks, adding 14 minutes for the average sleep onset time. It worked. I started waking up feeling like a different person. But the manual math was tedious every night. I searched for a tool to do it for me and found only ad-laden, paywalled apps requiring accounts to answer a simple question.</p>
               <p>That frustration became this site. GetSleepCalculator.net started as a personal project over a weekend in Pakistan, turned into something I wanted to share globally. It grew from one calculator to 13 free tools, and will stay completely free — no ads on calculator results, no account required.</p>
+              <p>Every calculation runs <strong>entirely in your browser</strong>. No sleep data is sent to any server — your inputs are processed client-side and discarded when you close the tab. Privacy-first by design, not by policy.</p>
             </div>
           </div>
 
@@ -76,6 +125,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>How We Ensure Accuracy</h2>
             <div className="space-y-4 text-base sm:text-lg leading-loose" style={{ color: "var(--text-muted)" }}>
               <p>Every calculation on this site is grounded in the same research that sleep labs use. Our methodology relies on three primary sources: the <a href="https://www.thensf.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>National Sleep Foundation (NSF)</a>, the Centers for Disease Control and Prevention (CDC), and the American Academy of Sleep Medicine (AASM). These organizations publish the consensus guidelines that doctors and sleep researchers use worldwide.</p>
+              <p>As a Full-Stack Software Developer, the work here is specifically about <em>translating those public guidelines into code</em>. The NSF and AASM publish the science; these tools implement it faithfully — converting peer-reviewed thresholds and cycle models into interactive calculators that anyone can use instantly, for free.</p>
               <p>Our core calculation methodology: take your target wake time, subtract 14 minutes (the NSF-documented average sleep latency), then count backward in 90-minute increments. Each result is a natural cycle boundary — the point where sleep is lightest and waking feels easiest. We review and update content when new guidelines are published.</p>
             </div>
           </div>
@@ -87,7 +137,7 @@ export default function AboutPage() {
               {[
                 { icon: "🧰", t: "13 free sleep tools in one place", d: "Bedtime, wake-up, nap, sleep debt, sleep cycles, REM, chronotype, jet lag, schedule builder, and more — all under one roof." },
                 { icon: "👶", t: "Age-specific recommendations (NSF guidelines)", d: "Our calculators for kids, babies, and adults use NSF age-group sleep recommendations — not a one-size-fits-all number." },
-                { icon: "🚫", t: "No ads on calculator results", d: "The results pages are clean. No banners, no pop-ups, no promoted content interrupting your sleep data." },
+                { icon: "✨", t: "Distraction-Free Layout", d: "Results pages are designed to keep focus on your data — clean, uncluttered, and built around the user experience first." },
                 { icon: "🔓", t: "No account required", d: "Open the calculator, enter your time, get your results. No registration form, no email verification, no password." },
                 { icon: "📱", t: "Mobile-friendly, instant results", d: "Every tool works on any device — phone, tablet, or desktop — and results appear instantly with no loading spinner." },
               ].map((item) => (

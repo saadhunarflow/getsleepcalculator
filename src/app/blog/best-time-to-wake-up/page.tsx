@@ -23,12 +23,13 @@ export default function Post3() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: "The Best Time to Wake Up According to Sleep Science",
+        description: "Wake up refreshed every morning — not groggy. Discover your ideal wake-up time based on 90-min sleep cycles. Same science sleep labs use. Free calculator.",
         url: "https://getsleepcalculator.net/blog/best-time-to-wake-up/",
         datePublished: "2026-05-26",
         dateModified: "2026-05-26",
-        author: { "@type": "Organization", name: "Get Sleep Calculator Editorial Team", url: "https://getsleepcalculator.net/about" },
+        author: { "@type": "Person", name: "Saad Zaib", url: "https://getsleepcalculator.net/about/", sameAs: ["https://hunarflow.com"] },
         publisher: { "@type": "Organization", name: "Get Sleep Calculator", url: "https://getsleepcalculator.net", logo: { "@type": "ImageObject", url: "https://getsleepcalculator.net/og-image.png" } },
         image: "https://getsleepcalculator.net/og-image.png",
         mainEntityOfPage: { "@type": "WebPage", "@id": "https://getsleepcalculator.net/blog/best-time-to-wake-up/" },
@@ -63,7 +64,7 @@ export default function Post3() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>Last updated: May 26, 2026 · 6 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By the <strong style={{ color: "var(--text-secondary)" }}>Get Sleep Calculator Editorial Team</strong> · Sleep Research &amp; Science</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               The Best Time to Wake Up According to Sleep Science

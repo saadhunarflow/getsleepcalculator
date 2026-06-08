@@ -8,10 +8,10 @@ export interface AuthorBioProps {
 }
 
 const DEFAULT_AUTHOR: Required<AuthorBioProps> = {
-  name: "Get Sleep Calculator Editorial Team",
-  title: "Sleep Health Writers",
-  bio: "Evidence-based sleep content reviewed against NSF and CDC guidelines. Our team synthesizes peer-reviewed research to provide accurate, actionable sleep science information.",
-  avatarInitials: "GSC",
+  name: "Saad Zaib",
+  title: "Full-Stack Developer & Creator",
+  bio: "Full-stack software engineer and creator of Get Sleep Calculator. Built this platform by translating official NSF and CDC sleep guidelines into clean, privacy-first code to help users optimize their circadian health.",
+  avatarInitials: "SZ",
 };
 
 export default function AuthorBio({

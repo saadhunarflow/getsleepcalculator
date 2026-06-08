@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sleep Blog – Science-Based Sleep Tips & Guides",
+    description: "Expert sleep articles covering sleep science, insomnia fixes, sleep hygiene, and more.",
+  },
 };
 
 const posts = [
@@ -94,6 +99,19 @@ export default function BlogPage() {
           name: "Get Sleep Calculator",
           url: "https://getsleepcalculator.net",
         },
+        blogPost: posts.map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.title,
+          url: `https://getsleepcalculator.net/blog/${p.slug}/`,
+          description: p.excerpt,
+          datePublished: p.date,
+          author: {
+            "@type": "Person",
+            name: "Saad Zaib",
+            url: "https://getsleepcalculator.net/about/",
+            sameAs: ["https://hunarflow.com"],
+          },
+        })),
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
