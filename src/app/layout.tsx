@@ -110,12 +110,12 @@ export default function RootLayout({
         <div id="google_translate_element" aria-hidden="true" />
         <Script
           id="google-translate-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         />
         <Script
           id="google-translate-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               function googleTranslateElementInit() {

@@ -19,3 +19,15 @@ RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 # 404
 ErrorDocument 404 /404.html
+
+# Allow verified search engine bots — bypass rate limiting
+SetEnvIfNoCase User-Agent "bingbot" good_bot
+SetEnvIfNoCase User-Agent "Googlebot" good_bot
+SetEnvIfNoCase User-Agent "Slurp" good_bot
+SetEnvIfNoCase User-Agent "DuckDuckBot" good_bot
+SetEnvIfNoCase User-Agent "YandexBot" good_bot
+SetEnvIfNoCase User-Agent "Applebot" good_bot
+SetEnvIfNoCase User-Agent "GPTBot" good_bot
+SetEnvIfNoCase User-Agent "ClaudeBot" good_bot
+SetEnvIfNoCase User-Agent "facebookexternalhit" good_bot
+SetEnvIfNoCase User-Agent "Twitterbot" good_bot
