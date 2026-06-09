@@ -24,24 +24,19 @@ jobs:
           npm ci
           npm run build
 
-      - name: Clear old files on Hostinger
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            rm -rf /home/u131596745/domains/getsleepcalculator.net/public_html/*
-
-      - name: Upload build via SCP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: "out/*"
-          target: "/home/u131596745/domains/getsleepcalculator.net/public_html/"
-          strip_components: 1
-          rm: false
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: /domains/getsleepcalculator.net/public_html/
+          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
