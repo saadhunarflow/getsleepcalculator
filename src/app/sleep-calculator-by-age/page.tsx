@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sleep Calculator by Age – How Much Sleep Do You Need?",
     description:
-      "Find exactly how many hours of sleep you need based on your age. Based on NSF and CDC guidelines.",
+      "Find exactly how many hours of sleep you need based on your age. Based on NSF and CDC guidelines. Free sleep calculator by age — updated 2025.",
     url: `${SITE_URL}/sleep-calculator-by-age/`,
     siteName: "Get Sleep Calculator",
     type: "website",

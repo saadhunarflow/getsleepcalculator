@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import JetLagContent from "../components/JetLagContent";
+import { faqSchema } from "@/lib/seo";
 
 const TIMEZONES = [
   { label: "UTC-12 (Baker Island)", value: -12 },
@@ -160,6 +161,13 @@ export default function JetLagPage() {
           { "@type": "ListItem", position: 2, name: "Jet Lag Calculator", item: "https://getsleepcalculator.net/jet-lag-calculator" },
         ],
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema([
+        { question: "What is jet lag and what causes it?", answer: "Jet lag happens when your internal circadian clock is misaligned with the local time at your destination. Your body clock shifts gradually about 1\u20131.5 hours per day. Flying across multiple time zones causes your sleep, alertness, and hormones to operate on a schedule out of sync with your environment." },
+        { question: "Why is eastward travel harder than westward travel?", answer: "The human circadian clock naturally runs slightly longer than 24 hours (~24.2 hours), making it easier to delay sleep (stay up later) than to advance it. Eastward travel requires advancing your clock against its natural drift, causing more severe jet lag than westward travel." },
+        { question: "How many days does jet lag last?", answer: "Expect approximately 1 day of recovery per time zone crossed when traveling east, and 0.75 days per time zone when traveling west. Crossing 3\u20134 time zones eastward takes about 3\u20134 days; crossing 5\u20136 time zones may take 5\u20136 days to fully recover." },
+        { question: "Should you nap after a long-haul flight?", answer: "It depends on arrival time. If you arrive before 3 PM local time, stay awake until 9\u201310 PM; a 20-minute nap is acceptable if needed. Between 3\u20136 PM, a short nap can help. After 6 PM, skip the nap and sleep at your destination bedtime to anchor your first night." },
+        { question: "What is the fastest way to recover from jet lag?", answer: "Get bright morning light at your destination, the most powerful circadian resetter. Use low-dose melatonin (0.5\u20133 mg) before your target bedtime for eastward travel, anchor to local meal times immediately, and arrive well-rested. Pre-shifting your schedule 1 hour per day before departure also reduces adjustment time." },
+      ]))}} />
 
       <section style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.18) 0%, transparent 70%), var(--bg-primary)", padding: "4rem 0 3rem" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">

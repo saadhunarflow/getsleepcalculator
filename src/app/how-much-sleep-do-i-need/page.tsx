@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { breadcrumbSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo";
 import HowMuchSleepContent from "@/app/components/HowMuchSleepContent";
 import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getsleepcalculator.net/how-much-sleep-do-i-need/" },
   openGraph: {
     title: "How Much Sleep Do I Need? (By Age, 2026 Guidelines)",
-    description: "NSF-recommended sleep hours for every age group — from newborns to adults 65+. Plus signs of sleep deprivation and expert tips.",
+    description: "How much sleep do you need by age? NSF-recommended sleep hours for newborns to seniors. Learn signs of sleep deprivation, factors that affect sleep needs, and how to optimize your sleep.",
     url: "https://getsleepcalculator.net/how-much-sleep-do-i-need/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },
@@ -61,6 +61,13 @@ export default function HowMuchSleepPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "How Much Sleep Do I Need?", href: "/how-much-sleep-do-i-need" }])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema([
+        { question: "How much sleep do adults need?", answer: "Most adults need 7\u20139 hours of sleep per night according to National Sleep Foundation guidelines. About 1 in 3 adults regularly get less than 7 hours. The CDC considers insufficient sleep a public health epidemic. Sleeping below 7 hours is linked to obesity, diabetes, hypertension, and heart disease." },
+        { question: "How do sleep needs change with age?", answer: "Sleep needs decrease progressively from birth to adulthood. Newborns need 14\u201317 hours, infants 12\u201315 hours, school-age children 9\u201311 hours, teenagers 8\u201310 hours, and adults 7\u20139 hours per night. After age 65, sleep efficiency decreases, meaning more time in bed may be needed for the same restorative sleep." },
+        { question: "What are the signs of not getting enough sleep?", answer: "Key signs include constant fatigue regardless of hours in bed, mood swings and irritability, cognitive fog and difficulty concentrating, increased appetite due to ghrelin increases, getting sick more often, and involuntary microsleeps. Sleep deprivation builds cumulatively as sleep debt affecting every body system." },
+        { question: "How does physical activity affect how much sleep I need?", answer: "Athletes and highly active individuals often benefit from 8\u201310 hours of sleep. Exercise increases slow-wave deep sleep, which is when physical repair occurs. More activity generally means more recovery sleep time is needed to support muscle repair and adaptation." },
+        { question: "Can genetics affect how much sleep a person needs?", answer: "Approximately 3% of people carry a gene mutation that allows them to function normally on 6 hours of sleep. For everyone else, consistently sleeping under 7 hours builds sleep debt that impairs cognitive performance even if you feel adapted to it over time." },
+      ]))}} />
 
       {/* Hero */}
       <section

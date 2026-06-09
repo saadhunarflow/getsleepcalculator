@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Sleep Calculator",
@@ -19,7 +20,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section style={{ background: "var(--bg-primary)", minHeight: "80vh" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Terms of Service", href: "/terms" }])) }} />
+      <section style={{ background: "var(--bg-primary)", minHeight: "80vh" }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
         <nav className="text-xs mb-6" style={{ color: "var(--text-muted)" }}>
           <Link href="/" className="hover:text-white transition-colors">
@@ -282,5 +285,6 @@ export default function TermsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

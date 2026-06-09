@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Reset your sleep schedule in 7 days with this step-by-step science protocol. Fix your circadian rhythm using anchor times and morning light. Free sleep schedule builder.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/how-to-fix-sleep-schedule/" },
   openGraph: {
-    title: "How to Fix Your Sleep Schedule in 7 Days",
-    description: "A step-by-step 7-day plan to reset your sleep schedule using proven sleep science techniques.",
+    title: "How to Fix Your Sleep Schedule in 7 Days | Get Sleep Calculator",
+    description: "Reset your sleep schedule in 7 days with this step-by-step science protocol. Fix your circadian rhythm using anchor times and morning light. Free sleep schedule builder.",
     url: "https://getsleepcalculator.net/blog/how-to-fix-sleep-schedule/",
     type: "article",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Sleep Calculator",
@@ -17,7 +18,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <section
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy-policy" }])) }} />
+      <section
       style={{
         background: "var(--bg-primary)",
         minHeight: "80vh",
@@ -201,5 +204,6 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

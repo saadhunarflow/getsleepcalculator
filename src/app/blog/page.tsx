@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Expert sleep articles covering sleep science, insomnia fixes, sleep hygiene, circadian rhythms, and more. Evidence-based advice to help you sleep better tonight.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/" },
   openGraph: {
-    title: "Sleep Blog – Science-Based Sleep Tips & Guides",
-    description: "Expert sleep articles covering sleep science, insomnia fixes, sleep hygiene, and more.",
+    title: "Sleep Blog – Science-Based Sleep Tips & Guides | Get Sleep Calculator",
+    description: "Expert sleep articles covering sleep science, insomnia fixes, sleep hygiene, circadian rhythms, and more. Evidence-based advice to help you sleep better tonight.",
     url: "https://getsleepcalculator.net/blog/",
     siteName: "Get Sleep Calculator",
     type: "website",

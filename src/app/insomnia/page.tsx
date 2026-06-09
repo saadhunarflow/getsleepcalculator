@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Insomnia: Causes, Types & Proven Treatments (CBT-I Guide)",
     description:
-      "Everything about insomnia — what it is, why it happens, and how to treat it using CBT-I, sleep restriction therapy, and stimulus control.",
+      "Comprehensive guide to insomnia: types, causes, symptoms, and the most effective treatments including Cognitive Behavioral Therapy for Insomnia (CBT-I).",
     url: `${SITE_URL}/insomnia`,
     type: "article",
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],

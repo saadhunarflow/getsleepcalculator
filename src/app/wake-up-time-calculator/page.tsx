@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getsleepcalculator.net/wake-up-time-calculator/" },
   openGraph: {
     title: "Wake Up Time Calculator – What Time Should I Wake Up?",
-    description: "Enter your bedtime and find the best wake-up times based on 90-min natural sleep cycles.",
+    description: "Find the best wake-up time based on your bedtime and natural 90-min sleep cycles. Get 6 wake-up options with sleep quality ratings — wake up refreshed every morning.",
     url: "https://getsleepcalculator.net/wake-up-time-calculator/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },

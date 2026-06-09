@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Circadian Rhythm – What It Is, How It Works & How to Fix It",
     description:
-      "Your circadian rhythm is a 24-hour internal clock driven by light and melatonin. Learn how it works and how to optimize it for better sleep.",
+      "Learn what your circadian rhythm is, how the 24-hour internal clock controls sleep and wakefulness, and proven ways to reset and optimize it.",
     url: `${SITE_URL}/circadian-rhythm`,
     type: "article",
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],

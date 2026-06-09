@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getsleepcalculator.net/bedtime-calculator/" },
   openGraph: {
     title: "Bedtime Calculator — What Time Should You Go to Bed Tonight?",
-    description: "Enter your wake-up time and get the exact bedtime based on 90-minute sleep cycles. Free, no account required.",
+    description: "Free bedtime calculator: enter your wake-up time and get the exact time to go to bed based on 90-minute sleep cycles. No sign-up. Works for adults, teens, and kids.",
     url: "https://getsleepcalculator.net/bedtime-calculator/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },

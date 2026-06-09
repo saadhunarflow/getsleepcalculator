@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getsleepcalculator.net/sleep-hygiene-tips/" },
   openGraph: {
     title: "Sleep Hygiene Tips – 20 Science-Backed Ways to Sleep Better",
-    description: "20 evidence-based sleep hygiene tips to fall asleep faster and wake up refreshed.",
+    description: "Improve your sleep with 20 proven sleep hygiene tips — from bedroom environment and light exposure to diet, exercise timing, and bedtime routines. Start sleeping better tonight.",
     url: "https://getsleepcalculator.net/sleep-hygiene-tips/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },

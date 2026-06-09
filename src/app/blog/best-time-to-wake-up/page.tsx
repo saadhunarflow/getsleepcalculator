@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Wake up refreshed every morning — not groggy. Discover your ideal wake-up time based on 90-min sleep cycles. Same science sleep labs use. Free calculator.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/best-time-to-wake-up/" },
   openGraph: {
-    title: "The Best Time to Wake Up According to Sleep Science",
-    description: "The best wake-up time isn't about the hour — it's about your sleep cycle. Here's the science.",
+    title: "The Best Time to Wake Up According to Sleep Science | Get Sleep Calculator",
+    description: "Wake up refreshed every morning — not groggy. Discover your ideal wake-up time based on 90-min sleep cycles. Same science sleep labs use. Free calculator.",
     url: "https://getsleepcalculator.net/blog/best-time-to-wake-up/",
     type: "article",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],

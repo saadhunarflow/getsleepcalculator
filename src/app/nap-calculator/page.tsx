@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nap Calculator – Best Nap Duration & Ideal Wake-Up Time",
     description:
-      "Find your perfect nap length and exact wake-up time. Based on sleep science — avoid sleep inertia and wake up refreshed.",
+      "Use our free nap calculator to find the perfect nap length. Power nap (20 min), short nap (30 min), or full cycle (90 min) — wake up refreshed, not groggy.",
     url: `${SITE_URL}/nap-calculator`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],

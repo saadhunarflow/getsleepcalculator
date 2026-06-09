@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import SleepCalculator from "./components/SleepCalculator";
 import SEOContent from "./components/SEOContent";
 import Link from "next/link";
@@ -8,6 +9,21 @@ export const metadata: Metadata = {
   description:
     "Find your perfect bedtime in seconds. Based on 90-minute sleep cycles — the same science sleep labs use. Free sleep calculator, no signup required.",
   alternates: { canonical: "https://getsleepcalculator.net/" },
+  openGraph: {
+    title: "Sleep Calculator – Best Bedtime & Wake-Up Time Calculator",
+    description:
+      "Find your perfect bedtime in seconds. Based on 90-minute sleep cycles — the same science sleep labs use. Free sleep calculator, no signup required.",
+    url: "https://getsleepcalculator.net/",
+    siteName: "Get Sleep Calculator",
+    type: "website",
+    images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sleep Calculator – Best Bedtime & Wake-Up Time Calculator",
+    description:
+      "Find your perfect bedtime in seconds. Based on 90-minute sleep cycles — the same science sleep labs use. Free sleep calculator, no signup required.",
+  },
 };
 
 const schemaWebApp = {
@@ -104,13 +120,11 @@ export default function HomePage() {
   return (
     <>
       {/* Schema Markup */}
-      <script
+      <Script
+        id="homepage-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebApp) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }}
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([schemaWebApp, schemaFAQ]) }}
       />
 
       {/* Hero */}
@@ -296,7 +310,7 @@ export default function HomePage() {
             className="text-2xl sm:text-3xl font-bold text-center mb-2"
             style={{ color: "var(--text-primary)" }}
           >
-            All Sleep Tools
+            Free Sleep Calculator Tools
           </h2>
           <p
             className="text-center mb-10 text-sm"
@@ -334,50 +348,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section style={{ background: "var(--bg-primary)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-          <div className="text-center mb-10">
-            <div className="text-5xl sm:text-6xl font-extrabold mb-2" style={{ color: "var(--accent-light)" }}>2.4M+</div>
-            <div className="text-base" style={{ color: "var(--text-muted)" }}>bedtimes calculated and counting</div>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
-            {[
-              { quote: "Finally stopped waking up groggy. The 5-cycle bedtime changed everything.", name: "Mark T.", role: "Teacher" },
-              { quote: "Used the baby sleep calculator for my 6-month-old. Nap schedule finally makes sense.", name: "Priya S.", role: "New Mom" },
-              { quote: "I thought 8 hours was always better. Turns out 7.5 hours at the right time works better for me.", name: "James R.", role: "Software Engineer" },
-            ].map((t) => (
-              <div key={t.name} className="rounded-2xl p-6" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)", fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <p className="font-semibold text-sm" style={{ color: "var(--text-primary)" }}>{t.name}</p>
-                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {["Based on NSF Science", "Free Forever", "No Signup"].map((badge) => (
-              <div key={badge} className="px-5 py-2 rounded-full text-sm font-semibold" style={{ background: "rgba(108,99,255,0.12)", border: "1px solid rgba(108,99,255,0.3)", color: "var(--accent-light)" }}>
-                ✓ {badge}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SEO Long-Form Content */}
       <SEOContent />
 
       {/* Related Guides */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-8">
-        <h2 className="text-xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>Related Guides</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>Related Sleep Guides</h2>
+          <Link href="/blog/" className="text-sm font-semibold" style={{ color: "var(--accent-light)", textDecoration: "none" }}>View all guides →</Link>
+        </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { href: "/blog/how-to-fall-asleep-faster/", title: "How to Fall Asleep Faster: 12 Science-Backed Tips", desc: "Reduce your sleep onset time and improve sleep quality with these evidence-based techniques." },
             { href: "/blog/best-time-to-wake-up/", title: "The Best Time to Wake Up According to Sleep Science", desc: "Use 90-minute sleep cycles to find your optimal wake-up time and avoid morning grogginess." },
+            { href: "/blog/if-i-sleep-at-10-what-time-should-i-wake-up/", title: "If I Sleep at 10 PM, What Time Should I Wake Up? (Sleep Cycle Chart)", desc: "Find the exact best times to wake up if you go to bed at 10 PM. Based on 90-minute sleep cycles — includes a full chart for 9 PM to 2 AM bedtimes." },
+            { href: "/blog/why-you-wake-up-tired/", title: "Why You Wake Up Tired (Even After 8 Hours of Sleep)", desc: "Waking up exhausted despite a full night's sleep? Here are the 8 most common reasons — and exactly how to fix each one." },
+            { href: "/blog/sleep-deprivation-effects/", title: "What Happens to Your Body After One Sleepless Night", desc: "Missing just one night of sleep triggers measurable changes in your brain, immune system, and metabolism. The science is more alarming than you think." },
+            { href: "/blog/how-to-fix-sleep-schedule/", title: "How to Fix Your Sleep Schedule in 7 Days", desc: "Whether you're a night owl trying to become a morning person, or you've wrecked your schedule with late nights — this step-by-step plan works." },
           ].map((g) => (
             <Link key={g.href} href={g.href} style={{ textDecoration: "none" }}>
               <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, padding: "1.25rem" }}>
@@ -473,7 +460,7 @@ export default function HomePage() {
             </table>
           </div>
           <div className="px-5 py-3 text-xs" style={{ color: "var(--text-muted)", borderTop: "1px solid var(--border)" }}>
-            Source: <Link href="/how-much-sleep-do-i-need/" style={{ color: "var(--accent-light)", textDecoration: "none" }}>National Sleep Foundation &amp; AASM guidelines</Link>. Individual needs vary. Consult a doctor if you have persistent sleep issues.
+            Source: <Link href="/how-much-sleep-do-i-need/" style={{ color: "var(--accent-light)", textDecoration: "none" }}>National Sleep Foundation &amp; AASM guidelines</Link> · <Link href="/sleep-calculator-by-age/" style={{ color: "var(--accent-light)", textDecoration: "none" }}>Sleep Calculator by Age</Link>. Individual needs vary. Consult a doctor if you have persistent sleep issues.
           </div>
         </div>
 

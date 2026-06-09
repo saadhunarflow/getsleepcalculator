@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "12 science-backed techniques to fall asleep faster tonight. Cut sleep onset time from 30+ min to under 10. Based on CBT-I research and sleep lab studies.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/how-to-fall-asleep-faster/" },
   openGraph: {
-    title: "How to Fall Asleep Faster: 12 Science-Backed Tips",
-    description: "Struggling to fall asleep? These 12 evidence-based techniques can reduce your sleep onset time from 30+ minutes to under 10 minutes.",
+    title: "How to Fall Asleep Faster: 12 Science-Backed Tips | Get Sleep Calculator",
+    description: "12 science-backed techniques to fall asleep faster tonight. Cut sleep onset time from 30+ min to under 10. Based on CBT-I research and sleep lab studies.",
     url: "https://getsleepcalculator.net/blog/how-to-fall-asleep-faster/",
     type: "article",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],

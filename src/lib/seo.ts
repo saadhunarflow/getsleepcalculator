@@ -14,6 +14,22 @@ export function breadcrumbSchema(crumbs: { name: string; href: string }[]) {
   };
 }
 
+/** Generate FAQPage JSON-LD schema */
+export function faqSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export const DEFAULT_SEO = {
   titleTemplate: '%s | Get Sleep Calculator',
   defaultTitle: 'Sleep Calculator – Find Your Perfect Bedtime & Wake-Up Time',

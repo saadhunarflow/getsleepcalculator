@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact – Get Sleep Calculator",
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }])) }} />
+      <section
       style={{
         background:
           "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.12) 0%, transparent 70%), var(--bg-primary)",
@@ -159,5 +162,6 @@ export default function ContactPage() {
         </p>
       </div>
     </section>
+    </>
   );
 }

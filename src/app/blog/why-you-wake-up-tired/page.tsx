@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Still tired after 8 hours? 8 proven causes of morning fatigue — from sleep inertia to sleep apnea — and exactly how to fix each. Science-backed solutions.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/why-you-wake-up-tired/" },
   openGraph: {
-    title: "Why You Wake Up Tired Even After 8 Hours of Sleep",
-    description: "Waking up exhausted despite sleeping 8 hours? Here are 8 common causes and exactly how to fix them.",
+    title: "Why You Wake Up Tired Even After 8 Hours of Sleep | Get Sleep Calculator",
+    description: "Still tired after 8 hours? 8 proven causes of morning fatigue — from sleep inertia to sleep apnea — and exactly how to fix each. Science-backed solutions.",
     url: "https://getsleepcalculator.net/blog/why-you-wake-up-tired/",
     type: "article",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],

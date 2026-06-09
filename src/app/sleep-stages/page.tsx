@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://getsleepcalculator.net/sleep-stages/" },
   openGraph: {
     title: "Sleep Stages Explained – NREM, REM & Sleep Cycles",
-    description: "A complete guide to the 4 stages of sleep — what happens in each stage and why they matter.",
+    description: "Learn about the 4 stages of sleep: NREM Stage 1, 2, 3 (deep sleep), and REM. Understand how each stage contributes to physical recovery, memory, and mental health.",
     url: "https://getsleepcalculator.net/sleep-stages/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },

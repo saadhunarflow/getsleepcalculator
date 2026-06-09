@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Baby Sleep Calculator – How Much Should My Baby Sleep?",
     description:
-      "Free baby sleep calculator by age. Find out exactly how much sleep your baby, newborn, or toddler needs — with nap breakdown and night sleep targets.",
+      "Free baby sleep calculator by age. Find out exactly how much sleep your baby, newborn, or toddler needs — with nap breakdown and night sleep targets. Based on NSF guidelines.",
     url: `${SITE_URL}/baby-sleep-calculator/`,
     siteName: "Get Sleep Calculator",
     type: "website",

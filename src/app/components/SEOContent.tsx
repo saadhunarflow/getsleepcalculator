@@ -87,7 +87,7 @@ export default function SEOContent() {
         <div style={{ marginBottom: "3rem" }}>
           <h2 style={h2Style}>What Is a Sleep Calculator?</h2>
           <p style={pStyle}>A sleep calculator is a simple tool that tells you the best times to fall asleep or wake up based on how human sleep actually works. Your body does not sleep in one long stretch — it moves through repeating cycles, each lasting about 90 minutes. Waking up naturally at the end of a full cycle means you feel alert and refreshed. Waking up in the middle of one — especially during deep sleep — is why you sometimes feel worse after a full eight hours than after seven.</p>
-          <p style={pStyle}>The calculator takes your target time (either when you need to wake up or when you plan to go to bed), adds roughly 14 minutes — the average sleep latency, or time it takes most people to fall asleep — and then lists every bedtime or wake-up window that lines up with a complete cycle.</p>
+          <p style={pStyle}>The calculator takes your target time (either when you need to wake up or when you plan to go to bed), adds roughly 14 minutes — the average <Link href="/sleep-cycle-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>sleep latency</Link>, or time it takes most people to fall asleep — and then lists every bedtime or wake-up window that lines up with a complete cycle.</p>
         </div>
 
         {divider}
@@ -95,7 +95,7 @@ export default function SEOContent() {
         {/* How Does It Work */}
         <div style={{ marginBottom: "3rem" }}>
           <h2 style={h2Style}>How Does a Sleep Calculator Work?</h2>
-          <p style={pStyle}>Sleep calculators are built around one core idea: sleep cycles. A single cycle lasts approximately 90 minutes and passes through four stages:</p>
+          <p style={pStyle}>Sleep calculators are built around one core idea: sleep cycles. A single cycle lasts approximately 90 minutes and passes through <Link href="/sleep-stages/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>four stages</Link>:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
             {stageCards.map((s) => (
               <div key={s.stage} style={{ background: "var(--bg-card)", border: `1px solid ${s.color}55`, borderLeft: `3px solid ${s.color}`, borderRadius: 10, padding: "0.875rem 1rem" }}>
@@ -157,6 +157,7 @@ export default function SEOContent() {
               </div>
             ))}
           </div>
+          <p style={{ ...pStyle, fontSize: 13, marginTop: "1rem" }}>Sticking to these three rules is one of the fastest ways to improve sleep quality. For the full evidence-based checklist, see our <Link href="/sleep-hygiene-tips/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Hygiene Tips guide</Link>.</p>
         </div>
 
         {divider}
@@ -188,7 +189,7 @@ export default function SEOContent() {
               </tbody>
             </table>
           </div>
-          <p style={{ ...pStyle, fontSize: 13 }}>The bigger question is whether your schedule is consistent. Going to bed and waking up at the same times every day — even on weekends — has a larger impact on sleep quality than squeezing in extra minutes here and there.</p>
+          <p style={{ ...pStyle, fontSize: 13 }}>The bigger question is whether your schedule is consistent. Going to bed and waking up at the same times every day — even on weekends — has a larger impact on sleep quality than squeezing in extra minutes here and there. Use our <Link href="/sleep-schedule-builder/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Schedule Builder</Link> to plan a consistent weekly routine.</p>
         </div>
 
         {divider}
@@ -200,7 +201,7 @@ export default function SEOContent() {
           <p style={pStyle}>True sleep — even the lightest Stage 1 — involves measurable changes in brain waves (shifting to theta waves), a drop in muscle activity, a slowing heart rate, and a reduction in your ability to respond to the environment. That said, lying still with eyes closed does have real benefits: it reduces sensory input, lowers mental load, and slows heart rate slightly.</p>
           <div style={{ background: "rgba(108,99,255,0.08)", border: "1px solid rgba(108,99,255,0.25)", borderRadius: 10, padding: "1rem 1.25rem", fontSize: 14 }}>
             <strong style={{ color: "var(--accent-light)" }}>Sleep tip: </strong>
-            <span style={{ color: "var(--text-muted)" }}>If you're lying in bed, eyes closed, but feeling wide awake for more than 20 minutes, sleep specialists recommend getting up and doing something calm in dim light rather than forcing it. Lying awake in bed trains your brain to associate the bed with wakefulness.</span>
+            <span style={{ color: "var(--text-muted)" }}>If you're lying in bed, eyes closed, but feeling wide awake for more than 20 minutes, sleep specialists recommend getting up and doing something calm in dim light rather than forcing it. Lying awake in bed trains your brain to associate the bed with wakefulness. If this happens regularly, read our <Link href="/insomnia/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>guide to insomnia</Link>.</span>
           </div>
         </div>
 
@@ -228,7 +229,7 @@ export default function SEOContent() {
               </tbody>
             </table>
           </div>
-          <p style={{ ...pStyle, fontSize: 13 }}>These times account for the ~14 minutes it takes the average person to fall asleep after getting into bed. Your personal fall-asleep time may be shorter or longer — you can adjust this in our <Link href="/sleep-cycle-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Cycle Calculator</Link>.</p>
+          <p style={{ ...pStyle, fontSize: 13 }}>These times account for the ~14 minutes it takes the average person to fall asleep after getting into bed. Your personal fall-asleep time may be shorter or longer — you can adjust this in our <Link href="/sleep-cycle-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Cycle Calculator</Link>. To calculate your exact ideal bedtime from a wake-up time, use the <Link href="/bedtime-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Bedtime Calculator</Link>.</p>
         </div>
 
         {divider}
@@ -258,7 +259,7 @@ export default function SEOContent() {
               </ul>
             </div>
           </div>
-          <p style={{ ...pStyle, fontSize: 13 }}>If you regularly sleep more than two hours longer on weekends, your body is telling you it's not getting enough during the week. <Link href="/sleep-debt-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Our Sleep Debt Calculator</Link> can help you measure how much you've accumulated.</p>
+          <p style={{ ...pStyle, fontSize: 13 }}>If you regularly sleep more than two hours longer on weekends, your body is telling you <Link href="/blog/sleep-deprivation-effects/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>it's not getting enough during the week</Link>. <Link href="/sleep-debt-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Our Sleep Debt Calculator</Link> can help you measure how much you've accumulated.</p>
         </div>
 
         {divider}

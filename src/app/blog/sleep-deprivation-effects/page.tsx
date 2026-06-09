@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Missing one night of sleep triggers measurable damage in 7 body systems. See the hour-by-hour timeline of what sleep deprivation does to your brain and body.",
   alternates: { canonical: "https://getsleepcalculator.net/blog/sleep-deprivation-effects/" },
   openGraph: {
-    title: "What Happens to Your Body After One Sleepless Night",
-    description: "Missing one night of sleep triggers measurable changes in your brain and body. The science explained.",
+    title: "What Happens to Your Body After One Sleepless Night | Get Sleep Calculator",
+    description: "Missing one night of sleep triggers measurable damage in 7 body systems. See the hour-by-hour timeline of what sleep deprivation does to your brain and body.",
     url: "https://getsleepcalculator.net/blog/sleep-deprivation-effects/",
     type: "article",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
