@@ -40,6 +40,8 @@ const toolGroups = [
 
 const learnLinks = [
   { label: "How Much Sleep Do I Need?", href: "/how-much-sleep-do-i-need/" },
+  { label: "Why Am I So Tired?", href: "/why-am-i-so-tired/" },
+  { label: "Sleep Inertia Explained", href: "/sleep-inertia/" },
   { label: "Sleep Stages Explained", href: "/sleep-stages/" },
   { label: "Sleep Hygiene Tips", href: "/sleep-hygiene-tips/" },
   { label: "Circadian Rhythm", href: "/circadian-rhythm/" },

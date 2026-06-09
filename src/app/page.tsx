@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import SleepCalculator from "./components/SleepCalculator";
 import SEOContent from "./components/SEOContent";
 import Link from "next/link";
@@ -119,13 +118,8 @@ const facts = [
 export default function HomePage() {
   return (
     <>
-      {/* Schema Markup */}
-      <Script
-        id="homepage-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([schemaWebApp, schemaFAQ]) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }} />
 
       {/* Hero */}
       <section

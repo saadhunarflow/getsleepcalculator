@@ -1,13 +1,29 @@
-# All crawlers - default allow
+# All crawlers — default rules
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /404
 Disallow: /*?*
 
-# Google - all bots
+# Google
 User-agent: Googlebot
 Allow: /
+
+# Microsoft Bing — all Microsoft bots explicitly allowed
+User-agent: Bingbot
+Allow: /
+Disallow:
+
+User-agent: adidxbot
+Allow: /
+Disallow:
+
+User-agent: MicrosoftPreview
+Allow: /
+Disallow:
+
+User-agent: BingPreview
+Allow: /
+Disallow:
 
 # ChatGPT / OpenAI
 User-agent: GPTBot
@@ -24,10 +40,6 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-# Microsoft Copilot / Bing
-User-agent: Bingbot
-Allow: /
-
 # Meta AI
 User-agent: FacebookBot
 Allow: /
@@ -40,3 +52,5 @@ Allow: /
 Sitemap: https://getsleepcalculator.net/sitemap.xml
 Sitemap: https://getsleepcalculator.net/sitemap-0.xml
 
+# IndexNow key verification
+# https://getsleepcalculator.net/b8f2e1a4c7d3f9e6b2a8c4d1f7e3a9c6.txt

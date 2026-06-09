@@ -5,13 +5,13 @@ import HowMuchSleepContent from "@/app/components/HowMuchSleepContent";
 import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
 
 export const metadata: Metadata = {
-  title: "How Much Sleep Do I Need? (By Age, 2026 Guidelines)",
+  title: "How Much Sleep Do I Need? Hours by Age, Men, Women & Teens (2026)",
   description:
-    "How much sleep do you need by age? NSF-recommended sleep hours for newborns to seniors. Learn signs of sleep deprivation, factors that affect sleep needs, and how to optimize your sleep.",
+    "How many hours of sleep do you need? NSF-recommended sleep hours by age — adults, women, men, and teens. Signs of sleep deprivation and how to optimize your sleep schedule.",
   alternates: { canonical: "https://getsleepcalculator.net/how-much-sleep-do-i-need/" },
   openGraph: {
-    title: "How Much Sleep Do I Need? (By Age, 2026 Guidelines)",
-    description: "How much sleep do you need by age? NSF-recommended sleep hours for newborns to seniors. Learn signs of sleep deprivation, factors that affect sleep needs, and how to optimize your sleep.",
+    title: "How Much Sleep Do I Need? Hours by Age, Men, Women & Teens (2026)",
+    description: "How many hours of sleep do you need? NSF-recommended sleep hours by age — adults, women, men, and teens. Signs of sleep deprivation and how to optimize your sleep schedule.",
     url: "https://getsleepcalculator.net/how-much-sleep-do-i-need/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },
@@ -52,6 +52,9 @@ const deprivationSigns = [
 const tocItems: TocItem[] = [
   { id: "by-age", text: "Recommended Sleep Hours by Age", level: 2 },
   { id: "adults", text: "How Much Sleep Do Adults Need?", level: 2 },
+  { id: "women", text: "How Many Hours of Sleep Do Women Need?", level: 2 },
+  { id: "men", text: "How Many Hours of Sleep Do Men Need?", level: 2 },
+  { id: "teens", text: "How Many Hours of Sleep Do Teens Need?", level: 2 },
   { id: "deprivation-signs", text: "Signs You\u2019re Not Getting Enough Sleep", level: 2 },
   { id: "factors", text: "Factors That Affect How Much Sleep You Need", level: 2 },
 ];
@@ -63,6 +66,9 @@ export default function HowMuchSleepPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "How Much Sleep Do I Need?", href: "/how-much-sleep-do-i-need" }])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema([
         { question: "How much sleep do adults need?", answer: "Most adults need 7\u20139 hours of sleep per night according to National Sleep Foundation guidelines. About 1 in 3 adults regularly get less than 7 hours. The CDC considers insufficient sleep a public health epidemic. Sleeping below 7 hours is linked to obesity, diabetes, hypertension, and heart disease." },
+        { question: "How many hours of sleep do women need?", answer: "Women need 7\u20139 hours of sleep per night, the same as men, per NSF guidelines. However, research shows women are 40% more likely to experience insomnia and tend to need 20 more minutes of sleep per night on average. Hormonal changes during menstrual cycles, pregnancy, and menopause can significantly increase sleep needs." },
+        { question: "How many hours of sleep do men need?", answer: "Men need 7\u20139 hours of sleep per night according to NSF guidelines. Studies suggest men are more likely to underreport sleep problems and accumulate hidden sleep debt. Men with less than 6 hours face significantly elevated risks of cardiovascular disease and metabolic disorders." },
+        { question: "How many hours of sleep do teens need?", answer: "Teenagers aged 14\u201317 need 8\u201310 hours of sleep per night. During adolescence, the circadian rhythm shifts later \u2014 teens naturally feel alert later at night and struggle to wake early. Less than 8 hours impairs cognitive function, emotional regulation, and academic performance. Early school start times often conflict with this biological clock." },
         { question: "How do sleep needs change with age?", answer: "Sleep needs decrease progressively from birth to adulthood. Newborns need 14\u201317 hours, infants 12\u201315 hours, school-age children 9\u201311 hours, teenagers 8\u201310 hours, and adults 7\u20139 hours per night. After age 65, sleep efficiency decreases, meaning more time in bed may be needed for the same restorative sleep." },
         { question: "What are the signs of not getting enough sleep?", answer: "Key signs include constant fatigue regardless of hours in bed, mood swings and irritability, cognitive fog and difficulty concentrating, increased appetite due to ghrelin increases, getting sick more often, and involuntary microsleeps. Sleep deprivation builds cumulatively as sleep debt affecting every body system." },
         { question: "How does physical activity affect how much sleep I need?", answer: "Athletes and highly active individuals often benefit from 8\u201310 hours of sleep. Exercise increases slow-wave deep sleep, which is when physical repair occurs. More activity generally means more recovery sleep time is needed to support muscle repair and adaptation." },
@@ -183,6 +189,96 @@ export default function HowMuchSleepPage() {
             Interestingly, consistently sleeping <em>more than 9 hours</em> (in adults without illness) is also
             associated with health risks — it may indicate an underlying condition. The 7–9 hour window is the
             science-backed sweet spot.
+          </p>
+        </div>
+      </section>
+
+      {/* Demographic sections: Women, Men, Teens */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14">
+        <h2 id="women" className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+          How Many Hours of Sleep Do Women Need?
+        </h2>
+        <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+          Women need <strong style={{ color: "var(--text-primary)" }}>7–9 hours</strong> of sleep per night — the same NSF recommendation as men. However, biology creates meaningful differences in sleep patterns:
+        </p>
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          {[
+            { icon: "🌙", title: "20 Extra Minutes on Average", desc: "Studies show women need roughly 20 more minutes of sleep per night than men, likely due to greater multitasking demands during the day which require more brain recovery." },
+            { icon: "📊", title: "40% Higher Insomnia Risk", desc: "Women are nearly 40% more likely to experience insomnia. Hormonal fluctuations during menstrual cycles directly affect sleep architecture and REM sleep quality." },
+            { icon: "🤰", title: "Pregnancy Increases Needs", desc: "During pregnancy — especially the first trimester — sleep needs often jump to 9–10 hours. Progesterone spikes cause intense daytime sleepiness that is a normal biological response." },
+            { icon: "🌡️", title: "Menopause Disrupts Sleep", desc: "Hot flashes, night sweats, and hormonal shifts during perimenopause and menopause significantly fragment sleep. Many women in this stage need 30–60 extra minutes in bed to achieve adequate restorative sleep." },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl p-5" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+              <div className="text-2xl mb-2">{item.icon}</div>
+              <h3 className="font-semibold text-sm mb-1" style={{ color: "var(--text-primary)" }}>{item.title}</h3>
+              <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: "rgba(108,99,255,0.07)", border: "1px solid rgba(108,99,255,0.2)", borderRadius: 12, padding: "1rem 1.25rem", marginBottom: "3.5rem" }}>
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+            <strong style={{ color: "var(--accent-light)" }}>Tip for women:</strong> Track your sleep quality across your menstrual cycle using our{" "}
+            <Link href="/sleep-debt-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Debt Calculator</Link> — you may find you need an extra 30–60 minutes in the days before your period.
+          </p>
+        </div>
+
+        <h2 id="men" className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+          How Many Hours of Sleep Do Men Need?
+        </h2>
+        <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+          Men need <strong style={{ color: "var(--text-primary)" }}>7–9 hours</strong> of sleep per night. Research consistently shows men are more likely to underestimate their sleep deprivation and dismiss poor sleep as normal:
+        </p>
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          {[
+            { icon: "🫀", title: "Cardiovascular Risk", desc: "Men sleeping under 6 hours per night face a significantly elevated risk of cardiovascular disease. Testosterone production also depends heavily on adequate sleep — most is produced during deep sleep stages." },
+            { icon: "🧠", title: "Hidden Sleep Debt", desc: "Studies show men underreport sleep problems at much higher rates than women. Performance impairment from sleep deprivation builds gradually — you may feel fine while functioning at 70% capacity." },
+            { icon: "💪", title: "Athletes Need More", desc: "Active men and athletes need 8–10 hours. Growth hormone release peaks during slow-wave sleep — shortchanging sleep directly limits muscle recovery and athletic adaptation." },
+            { icon: "⚠️", title: "Sleep Apnea Risk", desc: "Men are 2–3× more likely to have obstructive sleep apnea than women. If you snore loudly or wake unrefreshed despite 8+ hours, discuss sleep apnea testing with a doctor." },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl p-5" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+              <div className="text-2xl mb-2">{item.icon}</div>
+              <h3 className="font-semibold text-sm mb-1" style={{ color: "var(--text-primary)" }}>{item.title}</h3>
+              <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: "rgba(108,99,255,0.07)", border: "1px solid rgba(108,99,255,0.2)", borderRadius: 12, padding: "1rem 1.25rem", marginBottom: "3.5rem" }}>
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+            <strong style={{ color: "var(--accent-light)" }}>Tip for men:</strong> Use our{" "}
+            <Link href="/chronotype-calculator/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Chronotype Calculator</Link> to identify whether you&apos;re a Lion, Bear, Wolf, or Dolphin sleeper — then align your schedule to your biology instead of fighting it.
+          </p>
+        </div>
+
+        <h2 id="teens" className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+          How Many Hours of Sleep Do Teens Need?
+        </h2>
+        <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+          Teenagers aged 14–17 need <strong style={{ color: "var(--text-primary)" }}>8–10 hours</strong> of sleep per night — more than adults. This isn&apos;t laziness; it&apos;s biology:
+        </p>
+        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+          {[
+            { label: "Minimum", value: "8h", note: "Below this impairs learning", color: "var(--low)" },
+            { label: "Recommended", value: "8–10h", note: "Ideal for 14–17 year olds", color: "var(--good)" },
+            { label: "Maximum", value: "11h", note: "Acceptable for some teens", color: "var(--fair)" },
+          ].map((item) => (
+            <div key={item.label} className="rounded-2xl p-5 text-center" style={{ background: "var(--bg-card)", border: `2px solid ${item.color}22` }}>
+              <p className="text-3xl font-extrabold mb-1" style={{ color: item.color }}>{item.value}</p>
+              <p className="font-semibold text-sm mb-1" style={{ color: "var(--text-primary)" }}>{item.label}</p>
+              <p className="text-xs" style={{ color: "var(--text-muted)" }}>{item.note}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+          During adolescence, the brain undergoes dramatic development — and the circadian rhythm shifts <em>later</em> by 2–3 hours. Teens are biologically programmed to feel awake until midnight and struggle to wake before 8 AM. This isn&apos;t a choice; it&apos;s a documented neurological change.
+        </p>
+        <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-muted)" }}>
+          Chronic sleep deprivation in teens is linked to lower academic performance, increased anxiety and depression, higher risk-taking behavior, and greater likelihood of obesity. The American Academy of Pediatrics has called early school start times a &quot;public health issue.&quot;
+        </p>
+        <div style={{ background: "rgba(108,99,255,0.07)", border: "1px solid rgba(108,99,255,0.2)", borderRadius: 12, padding: "1rem 1.25rem" }}>
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+            <strong style={{ color: "var(--accent-light)" }}>For parents:</strong> Use our{" "}
+            <Link href="/sleep-calculator-for-kids/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Calculator for Kids</Link> and{" "}
+            <Link href="/sleep-calculator-by-age/" style={{ color: "var(--accent-light)", textDecoration: "underline" }}>Sleep Calculator by Age</Link> to find the ideal bedtime for your teenager based on their school wake-up time.
           </p>
         </div>
       </section>

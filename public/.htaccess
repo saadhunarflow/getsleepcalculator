@@ -22,6 +22,9 @@ ErrorDocument 404 /404.html
 
 # Allow verified search engine bots — bypass rate limiting
 SetEnvIfNoCase User-Agent "bingbot" good_bot
+SetEnvIfNoCase User-Agent "adidxbot" good_bot
+SetEnvIfNoCase User-Agent "BingPreview" good_bot
+SetEnvIfNoCase User-Agent "MicrosoftPreview" good_bot
 SetEnvIfNoCase User-Agent "Googlebot" good_bot
 SetEnvIfNoCase User-Agent "Slurp" good_bot
 SetEnvIfNoCase User-Agent "DuckDuckBot" good_bot
@@ -31,3 +34,20 @@ SetEnvIfNoCase User-Agent "GPTBot" good_bot
 SetEnvIfNoCase User-Agent "ClaudeBot" good_bot
 SetEnvIfNoCase User-Agent "facebookexternalhit" good_bot
 SetEnvIfNoCase User-Agent "Twitterbot" good_bot
+SetEnvIfNoCase User-Agent "DotBot" good_bot
+SetEnvIfNoCase User-Agent "SemrushBot" good_bot
+SetEnvIfNoCase User-Agent "AhrefsBot" good_bot
+SetEnvIfNoCase User-Agent "PerplexityBot" good_bot
+
+# Block WordPress scanner attacks at Apache level (reduces Imunify360 false-positive triggers)
+RewriteCond %{REQUEST_URI} ^/wp-admin [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{REQUEST_URI} ^/wp-login\.php [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{REQUEST_URI} ^/xmlrpc\.php [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteRule ^ - [F,L]
