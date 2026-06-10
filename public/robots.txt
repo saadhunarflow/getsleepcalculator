@@ -1,14 +1,13 @@
-# All crawlers — default rules
+# All crawlers - default rules
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /*?*
 
 # Google
 User-agent: Googlebot
 Allow: /
 
-# Microsoft Bing — all Microsoft bots explicitly allowed
+# Microsoft Bing - all Microsoft bots explicitly allowed
 User-agent: Bingbot
 Allow: /
 Disallow:
