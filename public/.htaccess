@@ -1,6 +1,14 @@
 Options -Indexes
 DirectoryIndex index.html
 
+# Whitelist search engine crawler IP ranges (Hostinger recommended fix)
+Order Deny,Allow
+Allow from 40.77.0.0/16
+Allow from 157.55.0.0/16
+Allow from 199.30.0.0/16
+Allow from 66.249.0.0/16
+Allow from 216.244.66.0/24
+
 # Security Headers
 Header always set X-Frame-Options SAMEORIGIN
 Header always set X-Content-Type-Options nosniff
