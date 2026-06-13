@@ -28,6 +28,17 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.+)$ /$1/ [R=301,L]
 
+# -------------------------------------------------------
+# SITEMAP ACCESS FIX — fixes Bing Webmaster Tools 403 error
+# Bingbot was getting blocked by Imunify360 / rate limiting when fetching sitemap
+# This explicitly allows ALL crawlers to access sitemap XML files
+# Only applies to sitemap*.xml files — rest of site security unchanged
+# -------------------------------------------------------
+<FilesMatch "sitemap.*\.xml$">
+    Allow from all
+    Satisfy Any
+</FilesMatch>
+
 # 404
 ErrorDocument 404 /404.html
 
