@@ -3,13 +3,13 @@ import Link from "next/link";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sleep Calculator",
-  description: "Read our privacy policy. We are a privacy-first platform; all sleep calculations are processed locally on your device with zero server-side data collection.",
+  title: "Privacy Policy | Get Sleep Calculator",
+  description: "Privacy policy for getsleepcalculator.net. How we handle your data — spoiler: we collect almost nothing.",
   alternates: { canonical: "https://getsleepcalculator.net/privacy-policy/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Privacy Policy | Sleep Calculator",
-    description: "Read our privacy policy. We are a privacy-first platform; all sleep calculations are processed locally on your device with zero server-side data collection.",
+    title: "Privacy Policy | Get Sleep Calculator",
+    description: "Privacy policy for getsleepcalculator.net. How we handle your data — spoiler: we collect almost nothing.",
     url: "https://getsleepcalculator.net/privacy-policy/",
     siteName: "Get Sleep Calculator",
     type: "website",

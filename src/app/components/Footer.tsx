@@ -111,6 +111,12 @@ export default function Footer() {
             <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
+        <p
+          className="mt-4 text-center text-xs"
+          style={{ color: "var(--text-muted)", opacity: 0.7, lineHeight: 1.6 }}
+        >
+          This site provides general sleep education based on published NSF, CDC, and AASM guidelines. It is not a substitute for professional medical advice, diagnosis, or treatment.
+        </p>
       </div>
     </footer>
   );

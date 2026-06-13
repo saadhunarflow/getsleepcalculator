@@ -125,7 +125,7 @@ export default function SleepInertiaPage() {
             </div>
             <div className="flex items-center gap-2 mb-4">
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>
-                ✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research
+                ✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Creator, GetSleepCalculator.net
               </span>
             </div>
             <h1

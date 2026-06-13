@@ -9,8 +9,8 @@ export interface AuthorBioProps {
 
 const DEFAULT_AUTHOR: Required<AuthorBioProps> = {
   name: "Saad Zaib",
-  title: "Full-Stack Developer & Creator",
-  bio: "Full-stack software engineer and creator of Get Sleep Calculator. Built this platform by translating official NSF and CDC sleep guidelines into clean, privacy-first code to help users optimize their circadian health.",
+  title: "Creator, GetSleepCalculator.net",
+  bio: "Software developer who built this platform by translating published sleep research from the National Sleep Foundation, CDC, and American Academy of Sleep Medicine into free, practical tools. All health content on this site is based on peer-reviewed studies and official guidelines — not personal medical opinion.",
   avatarInitials: "SZ",
 };
 

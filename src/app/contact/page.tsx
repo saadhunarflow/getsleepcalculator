@@ -3,10 +3,17 @@ import Link from "next/link";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact – Get Sleep Calculator",
-  description: "Contact GetSleepCalculator.net for questions, feedback, corrections, or partnership inquiries.",
+  title: "Contact Us | Get Sleep Calculator",
+  description: "Questions, feedback, or partnerships? Contact the Get Sleep Calculator team. We typically respond within 24 hours.",
   alternates: { canonical: "https://getsleepcalculator.net/contact/" },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Contact Us | Get Sleep Calculator",
+    description: "Questions, feedback, or partnerships? Contact the Get Sleep Calculator team. We typically respond within 24 hours.",
+    url: "https://getsleepcalculator.net/contact/",
+    siteName: "Get Sleep Calculator",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

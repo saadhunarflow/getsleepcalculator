@@ -32,7 +32,7 @@ const graphSchema = {
       "@type": "Person",
       "@id": "https://getsleepcalculator.net/about/#creator",
       name: "Sleep Calculator Creator",
-      jobTitle: "Full-Stack Developer & Creator",
+      jobTitle: "Creator, GetSleepCalculator.net",
       knowsAbout: ["Sleep Science", "Circadian Rhythms", "Software Engineering"],
       url: "https://getsleepcalculator.net/about",
       sameAs: ["https://getsleepcalculator.net"],

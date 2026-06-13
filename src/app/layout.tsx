@@ -63,10 +63,6 @@ export default function RootLayout({
           /* Hide the hidden translate widget itself */
           #google_translate_element { display: none !important; }
         `}</style>
-        {/* IndexNow key verification for Bing */}
-        <meta name="indexnow-key" content="b8f2e1a4c7d3f9e6b2a8c4d1f7e3a9c6" />
-        {/* Bing site verification */}
-        <meta name="msvalidate.01" content="b8f2e1a4c7d3f9e6b2a8c4d1f7e3a9c6" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

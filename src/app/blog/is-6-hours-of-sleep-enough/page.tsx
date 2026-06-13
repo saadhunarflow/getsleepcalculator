@@ -3,6 +3,7 @@ import Link from "next/link";
 import AuthorBio from "@/app/components/AuthorBio";
 import RelatedArticles from "@/app/components/RelatedArticles";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo";
+import SourcesSection from "@/app/components/SourcesSection";
 
 export const metadata: Metadata = {
   title: "Is 6 Hours of Sleep Enough? (For Adults, Students & Teens) | Get Sleep Calculator",
@@ -191,6 +192,13 @@ export default function Is6HoursEnough() {
             </div>
           </div>
 
+          <SourcesSection sources={[
+            { num: 1, author: "Van Dongen, H.P.A., Maislin, G., Mullington, J.M., & Dinges, D.F.", year: "2003", title: "The Cumulative Cost of Additional Wakefulness: Dose-Response Effects on Neurobehavioral Functions and Sleep Physiology", note: "Sleep, 26(2), 117–126", url: "https://pubmed.ncbi.nlm.nih.gov/12683469/" },
+            { num: 2, author: "National Sleep Foundation", title: "How Much Sleep Do We Really Need?", url: "https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need" },
+            { num: 3, author: "Prather, A.K., Janicki-Deverts, D., Hall, M.H., & Cohen, S.", year: "2015", title: "Behaviorally Assessed Sleep and Susceptibility to the Common Cold", note: "Sleep, 38(9), 1353–1359", url: "https://pubmed.ncbi.nlm.nih.gov/26118561/" },
+            { num: 4, author: "American Academy of Sleep Medicine", year: "2016", title: "Consensus Statement: Recommended Amount of Sleep for Pediatric Populations", url: "https://aasm.org/resources/pdf/pediatricsleepdurationconsensus.pdf" },
+            { num: 5, author: "Walker, M.", year: "2017", title: "Why We Sleep", note: "Scribner. — REM sleep and memory consolidation, DEC2 short-sleeper gene" },
+          ]} />
           <AuthorBio />
           <RelatedArticles posts={[
             { href: "/blog/is-5-hours-of-sleep-enough/", title: "Is 5 Hours of Sleep Enough?", excerpt: "What happens to your body and brain on just 5 hours — and when it becomes dangerous.", readTime: "5 min", category: "Sleep Science" },

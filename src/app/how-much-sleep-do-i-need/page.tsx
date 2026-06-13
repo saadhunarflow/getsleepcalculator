@@ -3,15 +3,16 @@ import Link from "next/link";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo";
 import HowMuchSleepContent from "@/app/components/HowMuchSleepContent";
 import TableOfContents, { TocItem } from "@/app/components/TableOfContents";
+import SourcesSection from "@/app/components/SourcesSection";
 
 export const metadata: Metadata = {
   title: "How Much Sleep Do I Need? Hours by Age, Men, Women & Teens (2026)",
   description:
-    "How many hours of sleep do you need? NSF-recommended sleep hours by age — adults, women, men, and teens. Signs of sleep deprivation and how to optimize your sleep schedule.",
+    "How much sleep do you need? Recommended hours by age from NSF and CDC — plus signs of sleep deprivation and expert tips.",
   alternates: { canonical: "https://getsleepcalculator.net/how-much-sleep-do-i-need/" },
   openGraph: {
     title: "How Much Sleep Do I Need? Hours by Age, Men, Women & Teens (2026)",
-    description: "How many hours of sleep do you need? NSF-recommended sleep hours by age — adults, women, men, and teens. Signs of sleep deprivation and how to optimize your sleep schedule.",
+    description: "How much sleep do you need? Recommended hours by age from NSF and CDC — plus signs of sleep deprivation and expert tips.",
     url: "https://getsleepcalculator.net/how-much-sleep-do-i-need/",
     images: [{ url: "https://getsleepcalculator.net/og-image.png", width: 1200, height: 630 }],
   },
@@ -333,6 +334,17 @@ export default function HowMuchSleepPage() {
 
       {/* SEO Long-Form Content */}
       <HowMuchSleepContent />
+
+      {/* Sources */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6">
+        <SourcesSection sources={[
+          { num: 1, author: "National Sleep Foundation", title: "How Much Sleep Do We Really Need?", url: "https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need" },
+          { num: 2, author: "Centers for Disease Control and Prevention", title: "Sleep and Sleep Disorders", url: "https://www.cdc.gov/sleep/about/" },
+          { num: 3, author: "NIH / National Heart, Lung, and Blood Institute", title: "Sleep Deprivation and Deficiency", url: "https://www.nhlbi.nih.gov/health/sleep" },
+          { num: 4, author: "Prather, A.K., Janicki-Deverts, D., Hall, M.H., & Cohen, S.", year: "2015", title: "Behaviorally Assessed Sleep and Susceptibility to the Common Cold", note: "Sleep, 38(9), 1353–1359", url: "https://pubmed.ncbi.nlm.nih.gov/26118561/" },
+          { num: 5, author: "American Academy of Sleep Medicine", year: "2016", title: "Consensus Statement: Recommended Amount of Sleep for Pediatric Populations", url: "https://aasm.org/resources/pdf/pediatricsleepdurationconsensus.pdf" },
+        ]} />
+      </section>
 
       {/* Related Tools */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-6">

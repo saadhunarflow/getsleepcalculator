@@ -6,12 +6,12 @@ import KidsSleepCalculator from "@/app/components/tools/KidsSleepCalculator";
 export const metadata: Metadata = {
   title: "Sleep Calculator for Kids — How Much Sleep Does My Child Need?",
   description:
-    "Free sleep calculator for kids by age. Find the ideal bedtime and wake-up time for your child based on school start time and age-specific sleep needs. Based on NSF and AAP guidelines.",
+    "Free sleep calculator for kids. Find ideal bedtimes by age and school start time — based on NSF and AAP guidelines.",
   alternates: { canonical: `${SITE_URL}/sleep-calculator-for-kids/` },
   openGraph: {
     title: "Sleep Calculator for Kids — How Much Sleep Does My Child Need?",
     description:
-      "Free sleep calculator for kids by age. Find the ideal bedtime and wake-up time for your child based on school start time and age-specific sleep needs. Based on NSF and AAP guidelines.",
+      "Free sleep calculator for kids. Find ideal bedtimes by age and school start time — based on NSF and AAP guidelines.",
     url: `${SITE_URL}/sleep-calculator-for-kids/`,
     siteName: "Get Sleep Calculator",
     type: "website",

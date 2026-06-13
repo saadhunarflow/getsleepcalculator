@@ -6,12 +6,12 @@ import BabySleepCalculator from "@/app/components/BabySleepCalculator";
 export const metadata: Metadata = {
   title: "Baby Sleep Calculator – How Much Should My Baby Sleep?",
   description:
-    "Free baby sleep calculator by age. Find out exactly how much sleep your baby, newborn, or toddler needs — with nap breakdown and night sleep targets. Based on NSF guidelines.",
+    "Free baby sleep calculator by age. How much sleep does your baby need? Nap and night targets for 0–36 months. NSF-based.",
   alternates: { canonical: `${SITE_URL}/baby-sleep-calculator/` },
   openGraph: {
     title: "Baby Sleep Calculator – How Much Should My Baby Sleep?",
     description:
-      "Free baby sleep calculator by age. Find out exactly how much sleep your baby, newborn, or toddler needs — with nap breakdown and night sleep targets. Based on NSF guidelines.",
+      "Free baby sleep calculator by age. How much sleep does your baby need? Nap and night targets for 0–36 months. NSF-based.",
     url: `${SITE_URL}/baby-sleep-calculator/`,
     siteName: "Get Sleep Calculator",
     type: "website",

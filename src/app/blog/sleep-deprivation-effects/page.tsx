@@ -3,6 +3,7 @@ import Link from "next/link";
 import AuthorBio from "@/app/components/AuthorBio";
 import RelatedArticles from "@/app/components/RelatedArticles";
 import TableOfContents from "@/app/components/TableOfContents";
+import SourcesSection from "@/app/components/SourcesSection";
 
 export const metadata: Metadata = {
   title: "What Happens to Your Body After One Sleepless Night | Get Sleep Calculator",
@@ -74,7 +75,7 @@ export default function Post4() {
               <span style={{ fontSize: 12, color: "var(--text-muted)" }}>Last updated: May 25, 2026 · 9 min read</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Full-Stack Developer &amp; Sleep Research</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>✍️ By <strong style={{ color: "var(--text-secondary)" }}>Saad Zaib</strong> · Creator, GetSleepCalculator.net</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
               What Happens to Your Body After One Sleepless Night
@@ -163,6 +164,12 @@ export default function Post4() {
             </div>
           </div>
 
+          <SourcesSection sources={[
+            { num: 1, author: "Walker, M.", year: "2017", title: "Why We Sleep", note: "Scribner. — amygdala reactivity, prefrontal cortex suppression, memory consolidation under sleep deprivation" },
+            { num: 2, author: "Prather, A.K., Janicki-Deverts, D., Hall, M.H., & Cohen, S.", year: "2015", title: "Behaviorally Assessed Sleep and Susceptibility to the Common Cold", note: "Sleep, 38(9), 1353–1359", url: "https://pubmed.ncbi.nlm.nih.gov/26118561/" },
+            { num: 3, author: "NIH / National Heart, Lung, and Blood Institute", title: "Sleep Deprivation and Deficiency", url: "https://www.nhlbi.nih.gov/health/sleep" },
+            { num: 4, author: "Centers for Disease Control and Prevention", title: "Sleep and Sleep Disorders", url: "https://www.cdc.gov/sleep/about/" },
+          ]} />
           <AuthorBio />
           <RelatedArticles posts={[
             { href: "/blog/why-you-wake-up-tired/", title: "Why You Wake Up Tired Even After 8 Hours of Sleep", excerpt: "8 common hidden causes of morning fatigue and how to fix each one with science-backed solutions.", readTime: "8 min", category: "Sleep Science" },
